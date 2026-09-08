@@ -4,8 +4,11 @@ Independent, unofficial, Node.js-only GMGN API SDK. Originally derived from the
 MIT-licensed GMGN CLI; now maintained independently, not byte-identical to upstream.
 Zero runtime dependencies. Node 22+. ESM.
 
-First public release target: **0.1.0**. Publication is pending; use the local
-tarball instructions below until registry publication is verified.
+## Install from npm
+
+```bash
+npm install @jaxonchenjc/gmgn-sdk@0.1.0
+```
 
 ## Install
 
@@ -20,7 +23,7 @@ node scripts/check-package.mjs --artifact
 Then in a consumer project:
 
 ```bash
-npm install /path/to/gmgn-sdk-ts/artifacts/jaxxjj-gmgn-sdk-0.1.0.tgz
+npm install /path/to/gmgn-sdk-ts/artifacts/jaxonchenjc-gmgn-sdk-0.1.0.tgz
 ```
 
 The artifact is installed and typechecked in a separate consumer before it is
@@ -29,7 +32,7 @@ copied to `artifacts/`. A SHA256 file accompanies it.
 ## Read data
 
 ```ts
-import { GmgnClient, GmgnError } from "@jaxxjj/gmgn-sdk";
+import { GmgnClient, GmgnError } from "@jaxonchenjc/gmgn-sdk";
 
 const apiKey = process.env.GMGN_API_KEY;
 if (!apiKey) throw new Error("Set GMGN_API_KEY");

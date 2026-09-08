@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 — unreleased
+## 0.1.0 — 2026-09-08
 
 First public release of the independent, unofficial GMGN TypeScript SDK.
 Earlier version labels were internal development checkpoints, not npm releases.

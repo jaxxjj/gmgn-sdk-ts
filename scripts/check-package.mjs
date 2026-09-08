@@ -39,7 +39,7 @@ const output = execFileSync(
     "--input-type=module",
     "-e",
     `
-  import { GmgnClient, OpenApiClient } from "@jaxxjj/gmgn-sdk";
+  import { GmgnClient, OpenApiClient } from "@jaxonchenjc/gmgn-sdk";
   if (GmgnClient !== OpenApiClient) throw new Error("Alias mismatch");
   const c = new GmgnClient({host: "https://openapi.gmgn.ai", apiKey: "not-a-real-key"});
   if (typeof c.getKol !== "function" || typeof c.getTokenPoolInfo !== "function") {
@@ -54,8 +54,8 @@ assert.equal(output.trim(), "consumer import passed");
 writeFileSync(
   join(consumer, "consumer.mts"),
   `
-import { GmgnClient, type Config, type TokenSignalGroup } from "@jaxxjj/gmgn-sdk";
-import type { GmgnClientOptions, GetTrenchesParams, HotSearchParams } from "@jaxxjj/gmgn-sdk";
+import { GmgnClient, type Config, type TokenSignalGroup } from "@jaxonchenjc/gmgn-sdk";
+import type { GmgnClientOptions, GetTrenchesParams, HotSearchParams } from "@jaxonchenjc/gmgn-sdk";
 const options: GmgnClientOptions = {apiKey: "mock"};
 const trenches: GetTrenchesParams = {chain: "sol", types: ["completed"], limit: 5};
 const hot: HotSearchParams = {chain: "sol", interval: "1h"};
