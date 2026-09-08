@@ -5,7 +5,7 @@ regressions, canonical naming, pre-send failures and diagnostic metadata.
 The follow-up was not live-probed; earlier live results below apply to the
 previous implementation. Endpoint-specific response models remain unverified.
 
-Version 0.2.0 is an independent implementation. The 0.1.0 byte-identity test is
+The first public release target is 0.1.0, an independent implementation. The prototype byte-identity test is
 intentionally removed; compatibility is assessed through protocol and behavior
 tests rather than preserving upstream implementation defects.
 
@@ -24,7 +24,7 @@ CI definitions and manual release-candidate artifact workflows are repository
 files. Their presence does not establish a completed GitHub Actions run, branch
 protection, trusted publication or production readiness.
 
-The rewritten 0.2.0 transport was directly live-tested with `getKol(chain, 2)`:
+The earlier transport implementation was directly live-tested with `getKol(chain, 2)`:
 sol, bsc and robinhood each succeeded with two rows. The launcher injected only
 the pre-existing API key; no private key was loaded. No live trade is part of
 this validation. All execution tests use synthetic keys and local/mocked requests.

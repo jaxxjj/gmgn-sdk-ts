@@ -10,7 +10,7 @@ Initial derivation:
 - Package: `gmgn-cli 1.6.1`
 - License: MIT, Copyright (c) 2025 GMGN; original LICENSE retained.
 
-Version 0.1.0 copied the client and signer verbatim. Version 0.2.0 replaces the
+An unpublished prototype copied the client and signer verbatim. This SDK replaces the
 transport, separates models/endpoint mapping, removes CLI logging/environment/file
 loading, gates financial writes and fixes transport defects. Signing canonicalization
 and endpoint protocol mappings derive from the original implementation.

@@ -1,40 +1,29 @@
 # Changelog
 
-## 0.2.0 — unreleased
+## 0.1.0 — unreleased
 
-### Architecture follow-up
+First public release of the independent, unofficial GMGN TypeScript SDK.
+Earlier version labels were internal development checkpoints, not npm releases.
 
-- Canonical `GmgnClient` and `GmgnClientOptions`; legacy names remain aliases.
-- Endpoint-local auth/effect policy; request core no longer hardcodes business paths.
+### Included
+
+- Market, token, wallet, tracking, quote and explicitly gated execution endpoints.
+- Canonical `GmgnClient` and `GmgnClientOptions`, with compatibility aliases.
+- Immutable request scopes with cancellation and total deadlines.
+- Redirect rejection, bounded response bodies and rate-aware safe-read retries.
+- No automatic retries for financial writes; failed submissions are marked as
+  having an unknown execution outcome.
+- Credential-safe errors with operation, attempt and bounded reason codes.
+- Endpoint-local authentication and read/write policy.
 - Separate request preparation, signing, response parsing and retry orchestration.
-- Preparation failures are never treated as retryable network failures.
-- Safe error metadata includes operation, attempt and bounded reason codes.
-- Object-style trenches parameters and reserved-field/section validation.
-- Clean generated output before builds to exclude obsolete modules from packages.
-- Conservative unknown outcome for every failed write after submission.
+- Object-style trenches parameters with reserved-field and section validation.
+- Zero runtime dependencies; Node.js 22+ and ESM.
+- Formatting, strict TypeScript, protocol tests and independent tarball-consumer
+  validation; SHA-pinned CI and release-candidate artifacts.
 
-Independent SDK implementation, no byte-identity constraint.
+### Known limitations
 
-### Breaking changes
-
-- Financial writes now require `enableTrading: true`; a signing key alone only
-  authorizes signed reads at the SDK boundary.
-- Custom hosts must be HTTPS origins. Explicit literal-loopback HTTP is test-only.
-- Errors now use exported `GmgnError`; raw upstream messages are not exposed.
-- Invalid HTTP/envelope combinations are rejected instead of returning data.
-- Default total timeout is 15s, response cap 8 MiB, and safe-read retry limit 2.
-- Explicit chain/address parameters can no longer be overridden through `extra`.
-- CLI debug/rate-limit environment variables no longer affect the SDK.
-
-### Added
-
-- Immutable request scopes with cancellation and deadline overrides.
-- Redirect rejection, bounded response streaming and rate-aware safe-read retries.
-- Ambiguous execution outcome marking; no automatic financial-write retries.
-- Independent consumer validation of the exact versioned package artifact.
-- SHA-pinned CI, manual release-candidate artifacts and Dependabot configuration.
-
-## 0.1.0
-
-Initial MIT-licensed GMGN client extraction; local tests and bounded three-chain
-read-only smoke checks. No npm publication.
+- Endpoint responses remain `unknown` until their schemas are verified.
+- No distributed rate limiter, lossless event feed or automatic pagination.
+- No claim of qualification for unattended financial execution.
+- Original MIT attribution is retained; this SDK is not affiliated with GMGN.

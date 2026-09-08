@@ -1,7 +1,10 @@
 {
   "name": "@jaxxjj/gmgn-sdk",
-  "version": "0.2.0",
-  "private": true,
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "description": "Independent unofficial GMGN SDK with bounded transport and safe execution defaults",
   "type": "module",
   "main": "./dist/index.js",
