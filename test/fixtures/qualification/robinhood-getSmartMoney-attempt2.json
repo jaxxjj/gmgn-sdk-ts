@@ -1,0 +1,47 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getSmartMoney"
+  },
+  "capturedAt": "2026-09-08T13:37:57.229Z",
+  "inputs": {
+    "args": ["robinhood", 2]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/smartmoney",
+        "query": [
+          ["chain", "robinhood"],
+          ["limit", "2"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"list\":[{\"transaction_hash\":\"[redacted text]\",\"maker\":\"0x0000000000000000000000000000000000000001\",\"base_amount\":2193598.946428325,\"quote_amount\":0.769489680922193,\"buy_cost_usd\":0,\"token_amount\":2193598.946428325,\"amount_usd\":119.0748325734,\"price\":3.5078868093691247e-07,\"price_usd\":0.000054282863678103394,\"timestamp\":1788874676,\"side\":\"buy\",\"is_open_or_close\":1,\"base_address\":\"0x0000000000000000000000000000000000000002\",\"balance\":0,\"base_token\":{\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"1000000000\",\"launchpad\":\"[redacted text]\"},\"maker_info\":{\"avatar\":\"\",\"name\":\"\",\"tags\":[\"[redacted text]\",\"[redacted text]\"],\"twitter_username\":\"\",\"twitter_name\":\"\"}},{\"transaction_hash\":\"[redacted text]\",\"maker\":\"0x0000000000000000000000000000000000000003\",\"base_amount\":31172284.163479015,\"quote_amount\":0.144,\"buy_cost_usd\":0,\"token_amount\":31172284.163479015,\"amount_usd\":353.50272,\"price\":4.619488236563307e-09,\"price_usd\":0.000011340289282174532,\"timestamp\":1788874675,\"side\":\"buy\",\"is_open_or_close\":1,\"base_address\":\"0x0000000000000000000000000000000000000004\",\"balance\":0,\"base_token\":{\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"1000000000\",\"launchpad\":\"[redacted text]\"},\"maker_info\":{\"avatar\":\"\",\"name\":\"\",\"tags\":[\"[redacted text]\",\"[redacted text]\",\"[redacted text]\"],\"twitter_username\":\"\",\"twitter_name\":\"\"}}]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object",
+      "rows": 2
+    }
+  }
+}

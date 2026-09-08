@@ -1,5 +1,17 @@
 # Validation — 2026-09-08
 
+## Record/replay follow-up
+
+The current SDK was used to capture KOL and smart-money lists for sol, bsc and
+robinhood: six successful read scenarios, two rows requested per call. Only the
+existing API key was injected; no signing key, write or trading operation was used.
+The sanitized fixtures now replay through the production SDK in normal tests.
+`lossless-json` is development-only and does not change the production decoder.
+See [record/replay guide](docs/record-replay.md). Older validation notes below
+remain historical, not a report of the newly added test inventory.
+
+## Earlier validation
+
 Architecture follow-up: 72 tests passed locally, including trenches overwrite
 regressions, canonical naming, pre-send failures and diagnostic metadata.
 The follow-up was not live-probed; earlier live results below apply to the

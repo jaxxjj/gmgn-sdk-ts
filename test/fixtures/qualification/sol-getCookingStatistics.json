@@ -1,0 +1,45 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getCookingStatistics"
+  },
+  "capturedAt": "2026-09-08T13:23:20.586Z",
+  "inputs": {
+    "args": []
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/cooking/statistics",
+        "query": [
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":[{\"launchapd\":\"[redacted text]\",\"token_count\":2594},{\"launchapd\":\"[redacted text]\",\"token_count\":459},{\"launchapd\":\"[redacted text]\",\"token_count\":11524},{\"launchapd\":\"[redacted text]\",\"token_count\":40312},{\"launchapd\":\"[redacted text]\",\"token_count\":0},{\"launchapd\":\"[redacted text]\",\"token_count\":14549},{\"launchapd\":\"[redacted text]\",\"token_count\":2209},{\"launchapd\":\"[redacted text]\",\"token_count\":468202},{\"launchapd\":\"[redacted text]\",\"token_count\":0},{\"launchapd\":\"[redacted text]\",\"token_count\":1993},{\"launchapd\":\"[redacted text]\",\"token_count\":185841},{\"launchapd\":\"[redacted text]\",\"token_count\":116912}],\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "array",
+      "rows": 12
+    }
+  }
+}

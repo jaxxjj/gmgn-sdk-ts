@@ -1,5 +1,19 @@
 # Changelog
 
+## Unreleased
+
+- Added executable per-endpoint chain/parameter/failure matrices, independent
+  Ed25519/RSA wire-signature checks and read/write safety gates.
+- Added a serial opt-in live qualification runner, per-case result ledger and
+  generated coverage matrix with a CI freshness check. Negative and unrun cases
+  remain explicit; no trading or production API change is included.
+
+- Test-only HTTP cassette recording/replay with strict offline matching,
+  credential/identity scrubbing, preserved JSON numeric lexemes and atomic writes.
+- Live KOL and smart-money captures for Solana, BSC and Robinhood.
+  Recording requires an explicit named read scenario; normal CI needs no credentials.
+- `lossless-json` is development-only; runtime dependencies and public API are unchanged.
+
 ## 0.1.0 — 2026-09-08
 
 First public release of the independent, unofficial GMGN TypeScript SDK.

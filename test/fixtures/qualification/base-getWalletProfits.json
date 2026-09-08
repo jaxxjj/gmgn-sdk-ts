@@ -1,0 +1,45 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getWalletProfits"
+  },
+  "capturedAt": "2026-09-08T13:28:00.142Z",
+  "inputs": {
+    "args": ["base", ["0x0000000000000000000000000000000000000001"], "7d"]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/wallet_profits",
+        "query": [
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": "{\"chain\":\"base\",\"period\":\"7d\",\"wallet_addresses\":[\"0x0000000000000000000000000000000000000001\"]}"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"list\":[{\"wallet_address\":\"0x0000000000000000000000000000000000000001\",\"realized_profit\":\"1135.57398288278663991877\",\"realized_profit_cost\":\"2211.92022887372059381934\",\"buy\":15,\"sell\":24,\"unrealized_profit\":\"-708.8664011517278826\",\"unrealized_profit_cost\":\"3590.13794468674497\",\"total_realized_profit\":\"5345.15406268653411777735\",\"total_realized_profit_cost\":\"61778.47678322783759058904\",\"total_profit\":\"4636.28766153480623517735\",\"total_cost\":\"83375.39044845083644491793\"}]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object",
+      "rows": 1
+    }
+  }
+}

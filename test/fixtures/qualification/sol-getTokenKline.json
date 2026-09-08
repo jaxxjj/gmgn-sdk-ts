@@ -1,0 +1,50 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getTokenKline"
+  },
+  "capturedAt": "2026-09-08T13:13:43.977Z",
+  "inputs": {
+    "args": ["sol", "11111111111111111111111111111112", "1m", 1788872623, 1788873223]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/market/token_kline",
+        "query": [
+          ["chain", "sol"],
+          ["address", "11111111111111111111111111111112"],
+          ["resolution", "1m"],
+          ["from", "1788872623"],
+          ["to", "1788873223"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"list\":[]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object",
+      "rows": 0
+    }
+  }
+}

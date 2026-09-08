@@ -1,0 +1,54 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getTokenTopTraders"
+  },
+  "capturedAt": "2026-09-08T13:29:35.288Z",
+  "inputs": {
+    "args": [
+      "eth",
+      "0x0000000000000000000000000000000000000001",
+      {
+        "limit": 2
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/market/token_top_traders",
+        "query": [
+          ["limit", "2"],
+          ["chain", "eth"],
+          ["address", "0x0000000000000000000000000000000000000001"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"list\":[{\"address\":\"0x0000000000000000000000000000000000000002\",\"account_address\":\"\",\"addr_type\":2,\"exchange\":\"[redacted text]\",\"native_balance\":\"48712655278130045122930\",\"balance\":58031391.05371375,\"amount_cur\":58031391.05371375,\"usd_value\":124684.64515161628,\"amount_percentage\":0.05803139105371374,\"accu_amount\":1540062.2455754955,\"accu_cost\":3834.2833241887606,\"cost\":3834.2833241887606,\"cost_cur\":3834.2833241887606,\"sell_amount_cur\":183305845.78143558,\"sell_amount_percentage\":0.7595423241985929,\"sell_volume_cur\":227849.2171993698,\"buy_volume_cur\":154535.5066499979,\"buy_amount_cur\":117717263.58832845,\"netflow_usd\":-73313.7105493719,\"netflow_amount\":-65588582.19310713,\"buy_tx_count_cur\":2225,\"sell_tx_count_cur\":2495,\"current_buy_amount\":29341491.887651064,\"current_sell_amount\":30409575.139709175,\"current_transfer_in_amount\":3405674.4956741882,\"current_transfer_out_amount\":7701174.198108839,\"history_bought_cost\":154535.5066499979,\"history_bought_fee\":15781.029591380604,\"history_sold_income\":227849.2171993698,\"history_sold_fee\":304.97205536119293,\"history_transfer_in_amount\":1043281164.422956,\"history_transfer_in_cost\":64727.35696688923,\"history_transfer_out_amount\":70843114.92477559,\"history_transfer_out_income\":81097.4866846224,\"history_transfer_out_fee\":0,\"transfer_in_count\":254,\"transfer_out_count\":496,\"wallet_tag_v2\":\"[redacted text]\",\"profit\":-10993.23662965332,\"total_cost\":235348.86526362895,\"profit_change\":-0.046710387225955434,\"realized_profit\":-10467.888540590091,\"realized_pnl\":-0.032772104934628773,\"unrealized_profit\":-525.3480890632286,\"unrealized_pnl\":-0.13701337242061506,\"avg_cost\":0.0013127684244379594,\"avg_sold\":0.0012430002776400565,\"transfer_in\":false,\"is_new\":false,\"is_suspicious\":false,\"is_on_curve\":true,\"start_holding_at\":1788476315,\"end_holding_at\":null,\"last_block\":25932944,\"last_active_timestamp\":1788874091,\"native_transfer\":{\"name\":null,\"from_address\":\"0x0000000000000000000000000000000000000003\",\"amount\":\"0.05375707613164296\",\"timestamp\":1741661063,\"tx_hash\":\"\"},\"token_transfer\":{\"name\":null,\"address\":\"\",\"timestamp\":0,\"tx_hash\":\"\",\"type\":\"\"},\"token_transfer_in\":{\"name\":null,\"address\":\"\",\"timestamp\":0,\"tx_hash\":\"\",\"type\":\"\"},\"token_transfer_out\":{\"name\":null,\"address\":\"\",\"timestamp\":0,\"tx_hash\":\"\",\"type\":\"\"},\"tags\":[\"[redacted text]\",\"[redacted text]\"],\"maker_token_tags\":[\"[redacted text]\",\"[redacted text]\"],\"name\":null,\"avatar\":null,\"twitter_username\":null,\"twitter_name\":null,\"created_at\":1741661063},{\"address\":\"0x0000000000000000000000000000000000000004\",\"account_address\":\"\",\"addr_type\":0,\"exchange\":\"\",\"native_balance\":\"22987370095179964\",\"balance\":27861300.763379037,\"amount_cur\":27861300.763379037,\"usd_value\":59862.02184829514,\"amount_percentage\":0.02786130076337904,\"accu_amount\":26766260.050895706,\"accu_cost\":36743.16083785026,\"cost\":36743.16083785026,\"cost_cur\":36743.16083785026,\"sell_amount_cur\":0,\"sell_amount_percentage\":0,\"sell_volume_cur\":0,\"buy_volume_cur\":35619.38484325905,\"buy_amount_cur\":26199521.220339905,\"netflow_usd\":35619.38484325905,\"netflow_amount\":26199521.220339905,\"buy_tx_count_cur\":23,\"sell_tx_count_cur\":0,\"current_buy_amount\":26199521.220339905,\"current_sell_amount\":0,\"current_transfer_in_amount\":566738.830555799,\"current_transfer_out_amount\":0,\"history_bought_cost\":35619.38484325905,\"history_bought_fee\":289.90133711112793,\"history_sold_income\":0,\"history_sold_fee\":0,\"history_transfer_in_amount\":566738.830555799,\"history_transfer_in_cost\":833.874657480079,\"history_transfer_out_amount\":0,\"history_transfer_out_income\":0,\"history_transfer_out_fee\":0,\"transfer_in_count\":3,\"transfer_out_count\":0,\"wallet_tag_v2\":\"[redacted text]\",\"profit\":20766.08675872686,\"total_cost\":36743.160837850264,\"profit_change\":0.565168762980649,\"realized_profit\":0,\"realized_pnl\":null,\"unrealized_profit\":20766.08675872686,\"unrealized_pnl\":0.5651687629806491,\"avg_cost\":0.0013595433498077084,\"avg_sold\":null,\"transfer_in\":true,\"is_new\":false,\"is_suspicious\":false,\"is_on_curve\":true,\"start_holding_at\":1788531227,\"end_holding_at\":null,\"last_block\":25927063,\"last_active_timestamp\":1788803219,\"native_transfer\":{\"name\":null,\"from_address\":\"0x0000000000000000000000000000000000000005\",\"amount\":\"0.00668591179266792\",\"timestamp\":1739273039,\"tx_hash\":\"\"},\"token_transfer\":{\"name\":null,\"address\":\"\",\"timestamp\":0,\"tx_hash\":\"\",\"type\":\"buy\"},\"token_transfer_in\":{\"name\":null,\"address\":\"\",\"timestamp\":0,\"tx_hash\":\"\",\"type\":\"buy\"},\"token_transfer_out\":{\"name\":null,\"address\":\"\",\"timestamp\":0,\"tx_hash\":\"\",\"type\":\"holding\"},\"tags\":[\"[redacted text]\"],\"maker_token_tags\":[\"[redacted text]\",\"[redacted text]\",\"[redacted text]\"],\"name\":null,\"avatar\":null,\"twitter_username\":null,\"twitter_name\":null,\"created_at\":1739273039}]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object",
+      "rows": 2
+    }
+  }
+}

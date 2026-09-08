@@ -1,0 +1,52 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getWalletStats"
+  },
+  "capturedAt": "2026-09-08T13:43:31.193Z",
+  "inputs": {
+    "args": [
+      "robinhood",
+      ["0x0000000000000000000000000000000000000001", "0x0000000000000000000000000000000000000002"],
+      "30d"
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/wallet_stats",
+        "query": [
+          ["chain", "robinhood"],
+          ["wallet_address", "0x0000000000000000000000000000000000000001"],
+          ["wallet_address", "0x0000000000000000000000000000000000000002"],
+          ["period", "30d"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"wallet_address\":\"0x0000000000000000000000000000000000000001\",\"native_balance\":\"0.579748378517329857\",\"realized_profit\":\"17505.21110710157667997681\",\"realized_profit_pnl\":\"0.0979753864701303\",\"buy\":3847,\"sell\":2528,\"bought_cost\":\"148483.91477217264722657994\",\"bought_fee\":\"4583.48805284311867894742\",\"sold_income\":\"194392.94511064477290511609\",\"sold_fee\":\"3511.37183931048674723078\",\"total_cost\":\"290805693752.16788895273334791275\",\"last_timestamp\":1788875001,\"pnl_stat\":{\"token_num\":1487,\"winrate\":0.4882154882154882,\"pnl_lt_nd5_num\":16,\"pnl_nd5_0x_num\":586,\"pnl_0x_2x_num\":876,\"pnl_2x_5x_num\":9,\"pnl_gt_5x_num\":0,\"avg_holding_period\":349448.8552188552},\"common\":{\"avatar\":\"https://fixture.invalid/redacted\",\"name\":\"\",\"ens\":\"\",\"tag\":\"\",\"tags\":[\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\"],\"tag_rank\":{\"fomo\":0,\"gmgn\":0,\"gmgn_go\":0,\"kol\":0,\"smart_degen\":0,\"wash_trader\":0},\"nick_name\":\"\",\"created_at\":1783370460,\"twitter_name\":\"[redacted text]\",\"twitter_username\":\"[redacted text]\",\"is_blue_verified\":true,\"twitter_bind\":true,\"twitter_fans_num\":2761,\"twitter_description\":\"[redacted text]\",\"followers_count\":2761,\"follow_count\":6616,\"remark_count\":3251,\"created_token_count\":217,\"fund_from\":\"\",\"fund_from_ts\":1783370460,\"fund_tx_hash\":\"[redacted text]\",\"wallet_address\":\"\",\"fund_from_address\":\"0x0000000000000000000000000000000000000003\",\"fund_amount\":\"0.003837028757944103\"}},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

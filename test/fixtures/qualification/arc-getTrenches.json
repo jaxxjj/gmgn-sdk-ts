@@ -1,0 +1,51 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getTrenches"
+  },
+  "capturedAt": "2026-09-08T13:34:57.564Z",
+  "inputs": {
+    "args": [
+      {
+        "chain": "arc",
+        "types": ["completed"],
+        "limit": 2
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/trenches",
+        "query": [
+          ["chain", "arc"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": "{\"version\":\"v2\",\"completed\":{\"filters\":[\"offchain\",\"onchain\"],\"launchpad_platform_v2\":true,\"limit\":2}}"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"completed\":[],\"near_completion\":[],\"new_creation\":[]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

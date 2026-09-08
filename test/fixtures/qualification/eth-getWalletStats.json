@@ -1,0 +1,47 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getWalletStats"
+  },
+  "capturedAt": "2026-09-08T13:30:16.968Z",
+  "inputs": {
+    "args": ["eth", ["0x0000000000000000000000000000000000000001"], "7d"]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/wallet_stats",
+        "query": [
+          ["chain", "eth"],
+          ["wallet_address", "0x0000000000000000000000000000000000000001"],
+          ["period", "7d"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"wallet_address\":\"0x0000000000000000000000000000000000000001\",\"native_balance\":\"0.119210288916670018\",\"realized_profit\":\"-26.85230429676529589899\",\"realized_profit_pnl\":\"-0.151459010623594\",\"buy\":0,\"sell\":2,\"bought_cost\":\"0\",\"bought_fee\":\"0\",\"sold_income\":\"150.43859563852254579336\",\"sold_fee\":\"3.4094747234024625215\",\"total_cost\":\"4.1567649503424625215\",\"last_timestamp\":1788873539,\"pnl_stat\":{\"token_num\":4,\"winrate\":0.5,\"pnl_lt_nd5_num\":0,\"pnl_nd5_0x_num\":1,\"pnl_0x_2x_num\":3,\"pnl_2x_5x_num\":0,\"pnl_gt_5x_num\":0,\"avg_holding_period\":1688632.5},\"common\":{\"avatar\":\"https://fixture.invalid/redacted\",\"name\":\"\",\"ens\":\"\",\"tag\":\"\",\"tags\":[\"[redacted text]\"],\"tag_rank\":{\"kol\":0},\"nick_name\":\"\",\"created_at\":1513696313,\"twitter_name\":\"[redacted text]\",\"twitter_username\":\"[redacted text]\",\"is_blue_verified\":true,\"twitter_bind\":true,\"twitter_fans_num\":6637,\"twitter_description\":\"[redacted text]\",\"followers_count\":6637,\"follow_count\":104,\"remark_count\":66,\"created_token_count\":0,\"fund_from\":\"\",\"fund_from_ts\":1741519199,\"fund_tx_hash\":\"\",\"wallet_address\":\"\",\"fund_from_address\":\"0x0000000000000000000000000000000000000002\",\"fund_amount\":\"0.49991296902084\"}},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

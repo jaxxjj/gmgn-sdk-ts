@@ -1,0 +1,44 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getUserInfo"
+  },
+  "capturedAt": "2026-09-08T13:13:52.283Z",
+  "inputs": {
+    "args": []
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/info",
+        "query": [
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"wallets\":[{\"chain\":\"arc\",\"address\":\"0x0000000000000000000000000000000000000001\",\"balances\":[]},{\"chain\":\"base\",\"address\":\"0x0000000000000000000000000000000000000001\",\"balances\":[{\"symbol\":\"[redacted text]\",\"token_address\":\"0x0000000000000000000000000000000000000002\",\"balance\":\"0\",\"usd_value\":\"\"},{\"symbol\":\"[redacted text]\",\"token_address\":\"0x0000000000000000000000000000000000000003\",\"balance\":\"0\",\"usd_value\":\"\"}]},{\"chain\":\"bsc\",\"address\":\"0x0000000000000000000000000000000000000001\",\"balances\":[{\"symbol\":\"[redacted text]\",\"token_address\":\"0x0000000000000000000000000000000000000002\",\"balance\":\"0\",\"usd_value\":\"\"},{\"symbol\":\"[redacted text]\",\"token_address\":\"0x0000000000000000000000000000000000000004\",\"balance\":\"0\",\"usd_value\":\"\"}]},{\"chain\":\"eth\",\"address\":\"0x0000000000000000000000000000000000000001\",\"balances\":[{\"symbol\":\"[redacted text]\",\"token_address\":\"0x0000000000000000000000000000000000000002\",\"balance\":\"0\",\"usd_value\":\"\"},{\"symbol\":\"[redacted text]\",\"token_address\":\"0x0000000000000000000000000000000000000005\",\"balance\":\"0\",\"usd_value\":\"\"}]},{\"chain\":\"robinhood\",\"address\":\"0x0000000000000000000000000000000000000001\",\"balances\":[]},{\"chain\":\"sol\",\"address\":\"11111111111111111111111111111117\",\"balances\":[{\"symbol\":\"[redacted text]\",\"token_address\":\"11111111111111111111111111111118\",\"balance\":\"0\",\"usd_value\":\"\"},{\"symbol\":\"[redacted text]\",\"token_address\":\"11111111111111111111111111111119\",\"balance\":\"0\",\"usd_value\":\"\"}]},{\"chain\":\"stable\",\"address\":\"0x0000000000000000000000000000000000000001\",\"balances\":[]}]}}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

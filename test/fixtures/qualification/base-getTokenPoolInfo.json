@@ -1,0 +1,46 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getTokenPoolInfo"
+  },
+  "capturedAt": "2026-09-08T13:26:57.618Z",
+  "inputs": {
+    "args": ["base", "0x0000000000000000000000000000000000000001"]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/token/pool_info",
+        "query": [
+          ["chain", "base"],
+          ["address", "0x0000000000000000000000000000000000000001"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"pool_address\":\"[redacted text]\",\"quote_address\":\"0x0000000000000000000000000000000000000002\",\"quote_symbol\":\"[redacted text]\",\"liquidity\":\"4092.7202670761617\",\"base_reserve\":\"666500574.888409915864842645\",\"quote_reserve\":\"0.828512718443545052\",\"initial_liquidity\":\"0\",\"initial_base_reserve\":\"999999999.999999999990256424\",\"initial_quote_reserve\":\"0\",\"creation_timestamp\":1788872091,\"base_reserve_value\":\"6248.1309006597376965512834640328755\",\"quote_reserve_value\":\"2046.333733394563950494530546\",\"quote_vault_address\":\"\",\"base_vault_address\":\"\",\"creator\":\"\",\"exchange\":\"[redacted text]\",\"token0_address\":\"0x0000000000000000000000000000000000000002\",\"token1_address\":\"0x0000000000000000000000000000000000000001\",\"base_address\":\"0x0000000000000000000000000000000000000001\",\"fee_ratio\":\"0\"},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

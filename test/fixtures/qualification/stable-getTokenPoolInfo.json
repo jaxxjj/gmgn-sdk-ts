@@ -1,0 +1,46 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getTokenPoolInfo"
+  },
+  "capturedAt": "2026-09-08T13:39:31.231Z",
+  "inputs": {
+    "args": ["stable", "0x0000000000000000000000000000000000000001"]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/token/pool_info",
+        "query": [
+          ["chain", "stable"],
+          ["address", "0x0000000000000000000000000000000000000001"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"pool_address\":\"0x0000000000000000000000000000000000000002\",\"quote_address\":\"0x0000000000000000000000000000000000000003\",\"quote_symbol\":\"[redacted text]\",\"liquidity\":\"18914.682622\",\"base_reserve\":\"247802299.03441863120058053\",\"quote_reserve\":\"9457.341311\",\"initial_liquidity\":\"1198.001\",\"initial_base_reserve\":\"836319138.785330100495240003\",\"initial_quote_reserve\":\"599.0005\",\"creation_timestamp\":1788200338,\"base_reserve_value\":\"12466.5743510880014286859656225315\",\"quote_reserve_value\":\"9412.13682728144287\",\"quote_vault_address\":\"\",\"base_vault_address\":\"\",\"creator\":\"\",\"exchange\":\"[redacted text]\",\"token0_address\":\"0x0000000000000000000000000000000000000001\",\"token1_address\":\"0x0000000000000000000000000000000000000003\",\"base_address\":\"0x0000000000000000000000000000000000000001\",\"fee_ratio\":\"0\"},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getFollowWallet"
+  },
+  "capturedAt": "2026-09-08T13:18:49.746Z",
+  "inputs": {
+    "args": ["sol", {}]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/trade/follow_wallet",
+        "query": [
+          ["chain", "sol"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json",
+          "x-signature": "<present>"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 429,
+        "headers": {
+          "content-type": "application/json",
+          "x-ratelimit-reset": "1788873560"
+        },
+        "body": "{\"code\":429,\"error\":\"[redacted text]\",\"message\":\"[redacted text]\",\"reset_at\":1788873560,\"tier\":\"[redacted text]\",\"upgrade_message\":\"[redacted text]\",\"upgrade_url\":\"https://fixture.invalid/redacted\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": false,
+    "error": {
+      "kind": "http",
+      "status": 429,
+      "apiCode": 429
+    }
+  }
+}

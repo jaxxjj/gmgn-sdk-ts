@@ -1,0 +1,46 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getTokenInfo"
+  },
+  "capturedAt": "2026-09-08T13:39:16.265Z",
+  "inputs": {
+    "args": ["stable", "0x0000000000000000000000000000000000000001"]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/token/info",
+        "query": [
+          ["chain", "stable"],
+          ["address", "0x0000000000000000000000000000000000000001"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"symbol\":\"[redacted text]\",\"name\":\"[redacted text]\",\"decimals\":18,\"logo\":\"https://fixture.invalid/redacted\",\"banner\":\"\",\"biggest_pool_address\":\"0x0000000000000000000000000000000000000002\",\"open_timestamp\":1788200343,\"migrated_timestamp\":1788200343,\"holder_count\":235,\"circulating_supply\":\"1000000000\",\"total_supply\":\"1000000000\",\"max_supply\":\"1000000000\",\"liquidity\":\"18914.682622\",\"creation_timestamp\":1788200338,\"standard\":\"[redacted text]\",\"trade_fee\":\"0\",\"total_fee\":\"15.56292728050654\",\"og\":false,\"image_dup_count\":0,\"visiting_count\":2,\"launchpad\":\"[redacted text]\",\"launchpad_status\":1,\"launchpad_progress\":1,\"launchpad_platform\":\"[redacted text]\",\"migrated_pool\":\"0x0000000000000000000000000000000000000002\",\"migration_market_cap\":0,\"migration_market_cap_quote\":\"\",\"ath_price\":0.00089341711,\"locked_ratio\":0,\"price\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"price\":\"0.00005030855\",\"price_1m\":\"0.00005030855\",\"price_5m\":\"0.00005030855\",\"price_1h\":\"0.00005030855\",\"price_6h\":\"0.000050427849\",\"price_24h\":\"0.000066056617\",\"buys_1m\":0,\"buys_5m\":0,\"buys_1h\":0,\"buys_6h\":0,\"buys_24h\":10,\"sells_1m\":0,\"sells_5m\":0,\"sells_1h\":0,\"sells_6h\":2,\"sells_24h\":14,\"volume_1m\":\"0\",\"volume_5m\":\"0\",\"volume_1h\":\"0\",\"volume_6h\":\"40.90607\",\"volume_24h\":\"4738.1346027\",\"buy_volume_1m\":\"0\",\"buy_volume_5m\":\"0\",\"buy_volume_1h\":\"0\",\"buy_volume_6h\":\"0\",\"buy_volume_24h\":\"1490.0511087\",\"sell_volume_1m\":\"0\",\"sell_volume_5m\":\"0\",\"sell_volume_1h\":\"0\",\"sell_volume_6h\":\"40.90607\",\"sell_volume_24h\":\"3248.083494\",\"swaps_1m\":0,\"swaps_5m\":0,\"swaps_1h\":0,\"swaps_6h\":2,\"swaps_24h\":24,\"hot_level\":0},\"pool\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"pool_address\":\"0x0000000000000000000000000000000000000002\",\"quote_address\":\"0x0000000000000000000000000000000000000003\",\"quote_symbol\":\"[redacted text]\",\"liquidity\":\"18914.682622\",\"base_reserve\":\"247802299.03441863120058053\",\"quote_reserve\":\"9457.341311\",\"initial_liquidity\":\"1198.001\",\"initial_base_reserve\":\"836319138.785330100495240003\",\"initial_quote_reserve\":\"599.0005\",\"creation_timestamp\":1788200338,\"base_reserve_value\":\"12466.5743510880014286859656225315\",\"quote_reserve_value\":\"9412.13682728144287\",\"quote_vault_address\":\"\",\"base_vault_address\":\"\",\"creator\":\"\",\"exchange\":\"[redacted text]\",\"token0_address\":\"0x0000000000000000000000000000000000000001\",\"token1_address\":\"0x0000000000000000000000000000000000000003\",\"base_address\":\"0x0000000000000000000000000000000000000001\",\"fee_ratio\":\"0\"},\"dev\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"creator_address\":\"0x0000000000000000000000000000000000000004\",\"creator_token_balance\":\"0\",\"creator_token_status\":\"[redacted text]\",\"twitter_name_change_history\":[],\"top_10_holder_rate\":\"0.219\",\"dexscr_ad\":0,\"dexscr_update_link\":0,\"cto_flag\":0,\"dexscr_boost_fee\":0,\"dexscr_trending_bar\":0,\"dexscr_ad_ts\":0,\"dexscr_update_link_ts\":0,\"dexscr_boost_ts\":0,\"dexscr_trending_bar_ts\":0,\"twitter_del_post_token_count\":0,\"twitter_create_token_count\":0,\"fund_from\":\"\",\"fund_from_ts\":0,\"creator_open_count\":1,\"offchain\":false,\"ath_token_info\":{\"ath_token\":\"0x0000000000000000000000000000000000000001\",\"ath_mc\":\"893417.11\",\"avatar\":\"https://fixture.invalid/redacted\",\"symbol\":\"[redacted text]\",\"name\":\"[redacted text]\",\"creation_timestamp\":1788200338}},\"link\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"gmgn\":\"https://fixture.invalid/redacted\",\"geckoterminal\":\"\",\"twitter_username\":\"[redacted text]\",\"website\":\"\",\"telegram\":\"\",\"bitbucket\":\"\",\"discord\":\"\",\"description\":\"\",\"facebook\":\"\",\"github\":\"\",\"instagram\":\"\",\"linkedin\":\"\",\"medium\":\"\",\"reddit\":\"\",\"tiktok\":\"\",\"youtube\":\"\",\"verify_status\":0,\"fracaster\":null},\"stat\":{\"holder_count\":235,\"signal_count\":0,\"degen_call_count\":0,\"top_rat_trader_percentage\":\"0\",\"top_bundler_trader_percentage\":\"0\",\"top_entrapment_trader_percentage\":\"0.0476\",\"top_bot_degen_percentage\":\"0\",\"creator_created_count\":60,\"bot_degen_count\":0,\"bot_degen_rate\":\"0\",\"fresh_wallet_rate\":\"0\",\"top_10_holder_rate\":\"0.219\",\"dev_team_hold_rate\":\"0\",\"creator_hold_rate\":\"0\",\"creator_token_balance\":\"0\",\"private_vault_hold_rate\":\"0\",\"top70_sniper_hold_rate\":\"0.0560090992\"},\"wallet_tags_stat\":{\"smart_wallets\":34,\"fresh_wallets\":1,\"renowned_wallets\":26,\"creator_wallets\":1,\"sniper_wallets\":16,\"rat_trader_wallets\":3,\"whale_wallets\":0,\"top_wallets\":45,\"bundler_wallets\":504},\"fee_distribution\":{\"launchpad\":\"[redacted text]\",\"platform_data\":null}},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

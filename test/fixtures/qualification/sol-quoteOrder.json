@@ -1,0 +1,60 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "quoteOrder"
+  },
+  "capturedAt": "2026-09-08T13:21:37.092Z",
+  "inputs": {
+    "args": [
+      "sol",
+      "11111111111111111111111111111112",
+      "11111111111111111111111111111113",
+      "11111111111111111111111111111114",
+      "1",
+      0
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/trade/quote",
+        "query": [
+          ["chain", "sol"],
+          ["from_address", "11111111111111111111111111111112"],
+          ["input_token", "11111111111111111111111111111113"],
+          ["output_token", "11111111111111111111111111111114"],
+          ["input_amount", "1"],
+          ["slippage", "0"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 429,
+        "headers": {
+          "content-type": "application/json",
+          "x-ratelimit-reset": "1788873728"
+        },
+        "body": "{\"code\":429,\"error\":\"[redacted text]\",\"message\":\"[redacted text]\",\"reset_at\":1788873728,\"tier\":\"[redacted text]\",\"upgrade_message\":\"[redacted text]\",\"upgrade_url\":\"https://fixture.invalid/redacted\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": false,
+    "error": {
+      "kind": "http",
+      "status": 429,
+      "apiCode": 429
+    }
+  }
+}

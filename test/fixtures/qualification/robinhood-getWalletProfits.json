@@ -1,0 +1,45 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getWalletProfits"
+  },
+  "capturedAt": "2026-09-08T13:32:50.173Z",
+  "inputs": {
+    "args": ["robinhood", ["0x0000000000000000000000000000000000000001"], "7d"]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/wallet_profits",
+        "query": [
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": "{\"chain\":\"robinhood\",\"period\":\"7d\",\"wallet_addresses\":[\"0x0000000000000000000000000000000000000001\"]}"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"list\":[{\"wallet_address\":\"0x0000000000000000000000000000000000000001\",\"realized_profit\":\"27165.62635009971203279124\",\"realized_profit_cost\":\"121222.57674541448316018924\",\"buy\":302,\"sell\":257,\"unrealized_profit\":\"-498.81670890014466\",\"unrealized_profit_cost\":\"14515.71009919289629\",\"total_realized_profit\":\"32858.91808933532148821273\",\"total_realized_profit_cost\":\"230008.52543873437113323775\",\"total_profit\":\"32360.10138043517682821273\",\"total_cost\":\"243275.03897054412542056051\"}]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object",
+      "rows": 1
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getTokenTopTraders"
+  },
+  "capturedAt": "2026-09-08T13:13:42.385Z",
+  "inputs": {
+    "args": [
+      "sol",
+      "11111111111111111111111111111112",
+      {
+        "limit": 2
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/market/token_top_traders",
+        "query": [
+          ["limit", "2"],
+          ["chain", "sol"],
+          ["address", "11111111111111111111111111111112"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"list\":[{\"address\":\"11111111111111111111111111111113\",\"account_address\":\"11111111111111111111111111111114\",\"addr_type\":2,\"exchange\":\"[redacted text]\",\"native_balance\":\"2716857\",\"balance\":116082308.62686,\"amount_cur\":116082308.62686,\"usd_value\":16360.618522231007,\"amount_percentage\":0.11723601476603081,\"accu_amount\":0,\"accu_cost\":0,\"cost\":0,\"cost_cur\":0,\"sell_amount_cur\":0,\"sell_amount_percentage\":0,\"sell_volume_cur\":0,\"buy_volume_cur\":0,\"buy_amount_cur\":0,\"netflow_usd\":0,\"netflow_amount\":0,\"buy_tx_count_cur\":0,\"sell_tx_count_cur\":0,\"current_buy_amount\":0,\"current_sell_amount\":0,\"current_transfer_in_amount\":0,\"current_transfer_out_amount\":0,\"history_bought_cost\":0,\"history_bought_fee\":0,\"history_sold_income\":0,\"history_sold_fee\":0,\"history_transfer_in_amount\":0,\"history_transfer_in_cost\":0,\"history_transfer_out_amount\":0,\"history_transfer_out_income\":0,\"history_transfer_out_fee\":0,\"transfer_in_count\":0,\"transfer_out_count\":0,\"wallet_tag_v2\":\"[redacted text]\",\"profit\":0,\"total_cost\":0,\"profit_change\":null,\"realized_profit\":0,\"realized_pnl\":null,\"unrealized_profit\":0,\"unrealized_pnl\":null,\"avg_cost\":null,\"avg_sold\":null,\"transfer_in\":false,\"is_new\":false,\"is_suspicious\":false,\"is_on_curve\":false,\"start_holding_at\":1788872787,\"end_holding_at\":null,\"last_block\":445347024,\"last_active_timestamp\":1788873221,\"native_transfer\":null,\"token_transfer\":{\"name\":null,\"address\":\"\",\"timestamp\":0,\"tx_hash\":\"\",\"type\":\"\"},\"token_transfer_in\":{\"name\":null,\"address\":\"\",\"timestamp\":0,\"tx_hash\":\"\",\"type\":\"\"},\"token_transfer_out\":{\"name\":null,\"address\":\"\",\"timestamp\":0,\"tx_hash\":\"\",\"type\":\"\"},\"tags\":[],\"maker_token_tags\":[\"[redacted text]\"],\"name\":null,\"avatar\":null,\"twitter_username\":null,\"twitter_name\":null,\"created_at\":0},{\"address\":\"11111111111111111111111111111115\",\"account_address\":\"11111111111111111111111111111116\",\"addr_type\":0,\"exchange\":\"\",\"native_balance\":\"47521840974\",\"balance\":25265920.05594,\"amount_cur\":25265920.05594,\"usd_value\":3560.9739721593724,\"amount_percentage\":0.02551703021583556,\"accu_amount\":25265920.05594,\"accu_cost\":706.0972415798194,\"cost\":706.0972415798193,\"cost_cur\":706.0972415798193,\"sell_amount_cur\":6192184.815917,\"sell_amount_percentage\":0.196839092537219,\"sell_volume_cur\":1643.21929740767,\"buy_volume_cur\":859.4121469228,\"buy_amount_cur\":31458104.871857,\"netflow_usd\":-783.8071504848699,\"netflow_amount\":25265920.05594,\"buy_tx_count_cur\":5,\"sell_tx_count_cur\":4,\"current_buy_amount\":31458104.871857,\"current_sell_amount\":6192184.815917,\"current_transfer_in_amount\":0,\"current_transfer_out_amount\":0,\"history_bought_cost\":859.4121469228,\"history_bought_fee\":19.6258930202,\"history_sold_income\":1643.21929740767,\"history_sold_fee\":17.71490525749,\"history_transfer_in_amount\":0,\"history_transfer_in_cost\":0,\"history_transfer_out_amount\":0,\"history_transfer_out_income\":0,\"history_transfer_out_fee\":0,\"transfer_in_count\":0,\"transfer_out_count\":0,\"wallet_tag_v2\":\"[redacted text]\",\"profit\":4307.440324366553,\"total_cost\":896.7529452004901,\"profit_change\":4.80337460548125,\"realized_profit\":1452.5635937869995,\"realized_pnl\":7.6187785951425155,\"unrealized_profit\":2854.876730579553,\"unrealized_pnl\":4.043177854925566,\"avg_cost\":0.00002731926002610685,\"avg_sold\":0.0002653698728732672,\"transfer_in\":false,\"is_new\":true,\"is_suspicious\":false,\"is_on_curve\":true,\"start_holding_at\":1788872783,\"end_holding_at\":null,\"last_block\":445346109,\"last_active_timestamp\":1788872931,\"native_transfer\":{\"name\":null,\"from_address\":\"11111111111111111111111111111117\",\"amount\":\"19.382617176\",\"timestamp\":1788515555,\"tx_hash\":\"[redacted text]\"},\"token_transfer\":{\"name\":null,\"address\":\"\",\"timestamp\":0,\"tx_hash\":\"\",\"type\":\"buy\"},\"token_transfer_in\":{\"name\":null,\"address\":\"\",\"timestamp\":0,\"tx_hash\":\"\",\"type\":\"buy\"},\"token_transfer_out\":{\"name\":null,\"address\":\"\",\"timestamp\":0,\"tx_hash\":\"\",\"type\":\"sell\"},\"tags\":[\"[redacted text]\",\"[redacted text]\",\"[redacted text]\"],\"maker_token_tags\":[\"[redacted text]\",\"[redacted text]\"],\"name\":null,\"avatar\":null,\"twitter_username\":null,\"twitter_name\":null,\"created_at\":1788515555}]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object",
+      "rows": 2
+    }
+  }
+}

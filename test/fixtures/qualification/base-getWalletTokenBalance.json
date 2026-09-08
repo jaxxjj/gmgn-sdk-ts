@@ -1,0 +1,51 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getWalletTokenBalance"
+  },
+  "capturedAt": "2026-09-08T13:28:06.928Z",
+  "inputs": {
+    "args": [
+      "base",
+      "0x0000000000000000000000000000000000000001",
+      "0x0000000000000000000000000000000000000002"
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/wallet_token_balance",
+        "query": [
+          ["chain", "base"],
+          ["wallet_address", "0x0000000000000000000000000000000000000001"],
+          ["token_address", "0x0000000000000000000000000000000000000002"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"balances\":[{\"wallet_address\":\"0x0000000000000000000000000000000000000001\",\"token_address\":\"0x0000000000000000000000000000000000000002\",\"balance\":\"0\",\"decimal\":0,\"height\":51041475,\"tx_index\":0}]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getSmartMoney"
+  },
+  "capturedAt": "2026-09-08T13:21:30.278Z",
+  "inputs": {
+    "args": ["sol", 2]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/smartmoney",
+        "query": [
+          ["chain", "sol"],
+          ["limit", "2"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"list\":[{\"transaction_hash\":\"[redacted text]\",\"maker\":\"11111111111111111111111111111112\",\"base_amount\":3158788.429975,\"quote_amount\":0.296296296,\"buy_cost_usd\":0,\"token_amount\":3158788.429975,\"amount_usd\":30.47111108064,\"price\":9.380061456105e-08,\"price_usd\":0.000009646455201458382,\"timestamp\":1788873685,\"side\":\"buy\",\"is_open_or_close\":1,\"base_address\":\"11111111111111111111111111111113\",\"balance\":0,\"base_token\":{\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"1000000000\",\"launchpad\":\"[redacted text]\"},\"maker_info\":{\"avatar\":\"\",\"name\":\"\",\"tags\":[\"[redacted text]\",\"[redacted text]\",\"[redacted text]\"],\"twitter_username\":\"\",\"twitter_name\":\"\"}},{\"transaction_hash\":\"[redacted text]\",\"maker\":\"11111111111111111111111111111114\",\"base_amount\":85093.580041,\"quote_amount\":0.992570579,\"buy_cost_usd\":0,\"token_amount\":85093.580041,\"amount_usd\":102.07595834436,\"price\":0.00001166445904052641,\"price_usd\":0.001199572967727736,\"timestamp\":1788873684,\"side\":\"buy\",\"is_open_or_close\":0,\"base_address\":\"11111111111111111111111111111115\",\"balance\":0,\"base_token\":{\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"991714367\",\"launchpad\":\"[redacted text]\"},\"maker_info\":{\"avatar\":\"\",\"name\":\"\",\"tags\":[\"[redacted text]\"],\"twitter_username\":\"\",\"twitter_name\":\"\"}}]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object",
+      "rows": 2
+    }
+  }
+}

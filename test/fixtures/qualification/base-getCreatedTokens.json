@@ -1,0 +1,53 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getCreatedTokens"
+  },
+  "capturedAt": "2026-09-08T13:27:46.458Z",
+  "inputs": {
+    "args": [
+      "base",
+      "0x0000000000000000000000000000000000000001",
+      {
+        "limit": 2
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/created_tokens",
+        "query": [
+          ["limit", "2"],
+          ["chain", "base"],
+          ["wallet_address", "0x0000000000000000000000000000000000000001"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"last_create_timestamp\":null,\"inner_count\":0,\"open_count\":0,\"open_ratio\":\"\",\"creator_ath_info\":{\"creator\":\"\",\"ath_token\":\"\",\"ath_mc\":\"\",\"token_symbol\":\"\",\"token_logo\":\"\",\"token_name\":\"\"},\"tokens\":[]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

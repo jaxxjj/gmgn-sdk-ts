@@ -1,0 +1,53 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getTokenSignals"
+  },
+  "capturedAt": "2026-09-08T13:30:45.265Z",
+  "inputs": {
+    "args": [
+      "eth",
+      [
+        {
+          "signal_type": [1]
+        }
+      ]
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/market/token_signal",
+        "query": [
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": "{\"chain\":\"eth\",\"groups\":[{\"signal_type\":[1]}]}"
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":400,\"error\":\"[redacted text]\",\"message\":\"[redacted text]\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": false,
+    "error": {
+      "kind": "http",
+      "status": 400,
+      "apiCode": 400
+    }
+  }
+}

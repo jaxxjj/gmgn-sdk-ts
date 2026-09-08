@@ -1,0 +1,53 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getCreatedTokens"
+  },
+  "capturedAt": "2026-09-08T13:32:35.601Z",
+  "inputs": {
+    "args": [
+      "robinhood",
+      "0x0000000000000000000000000000000000000001",
+      {
+        "limit": 2
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/created_tokens",
+        "query": [
+          ["limit", "2"],
+          ["chain", "robinhood"],
+          ["wallet_address", "0x0000000000000000000000000000000000000001"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"last_create_timestamp\":1784625388,\"inner_count\":1,\"open_count\":0,\"open_ratio\":\"0\",\"creator_ath_info\":{\"creator\":\"0x0000000000000000000000000000000000000001\",\"ath_token\":\"0x0000000000000000000000000000000000000002\",\"ath_mc\":\"5760.393\",\"token_symbol\":\"[redacted text]\",\"token_logo\":\"https://fixture.invalid/redacted\",\"token_name\":\"[redacted text]\"},\"tokens\":[{\"token_address\":\"0x0000000000000000000000000000000000000002\",\"symbol\":\"[redacted text]\",\"chain\":\"robinhood\",\"create_timestamp\":1784625388,\"is_open\":false,\"marcket_cap\":\"3400.3356\",\"market_cap\":\"3400.3356\",\"biggest_pool\":\"0x0000000000000000000000000000000000000003\",\"pool_liquidity\":\"13.810908248248543\",\"holders\":5,\"swap_1h\":0,\"volume_1h\":\"0\",\"logo\":\"https://fixture.invalid/redacted\",\"bundler_rate\":0,\"liquidity_less_4k\":true,\"cto_flag\":false,\"twitter_name_change_history\":[],\"dexscr_ad\":false,\"dexscr_update_link\":false,\"is_pump\":false,\"launchpad_platform\":\"[redacted text]\",\"token_ath_mc\":\"5760.393\",\"coin_creator_fee\":0,\"coin_creator_fee_token_address\":\"\",\"total_fee\":\"0.01845437994501719\"}]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "GMGN HTTP via SDK fetch transport",
+    "scenario": "sol-smartmoney"
+  },
+  "capturedAt": "2026-09-08T12:04:51.639Z",
+  "inputs": {},
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/smartmoney",
+        "query": [
+          ["chain", "sol"],
+          ["limit", "2"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"list\":[{\"transaction_hash\":\"[redacted text]\",\"maker\":\"11111111111111111111111111111112\",\"base_amount\":5084947.554006,\"quote_amount\":0.498765431,\"buy_cost_usd\":0,\"token_amount\":5084947.554006,\"amount_usd\":51.18829618353,\"price\":9.808664213401e-08,\"price_usd\":0.000010066632082213447,\"timestamp\":1788869082,\"side\":\"buy\",\"is_open_or_close\":1,\"base_address\":\"11111111111111111111111111111113\",\"balance\":0,\"base_token\":{\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"1000000000\",\"launchpad\":\"[redacted text]\"},\"maker_info\":{\"avatar\":\"\",\"name\":\"\",\"tags\":[\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\"],\"twitter_username\":\"\",\"twitter_name\":\"\"}},{\"transaction_hash\":\"[redacted text]\",\"maker\":\"11111111111111111111111111111114\",\"base_amount\":2.407808731,\"quote_amount\":248.216529,\"buy_cost_usd\":0,\"token_amount\":2.407808731,\"amount_usd\":248.216529,\"price\":103.088142261579,\"price_usd\":103.088142261579,\"timestamp\":1788869081,\"side\":\"buy\",\"is_open_or_close\":0,\"base_address\":\"11111111111111111111111111111115\",\"balance\":0,\"base_token\":{\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"572748980\",\"launchpad\":\"\"},\"maker_info\":{\"avatar\":\"\",\"name\":\"\",\"tags\":[\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\"],\"twitter_username\":\"\",\"twitter_name\":\"\"}}]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ]
+}

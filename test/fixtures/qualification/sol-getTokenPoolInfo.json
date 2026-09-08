@@ -1,0 +1,46 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getTokenPoolInfo"
+  },
+  "capturedAt": "2026-09-08T13:13:39.218Z",
+  "inputs": {
+    "args": ["sol", "11111111111111111111111111111112"]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/token/pool_info",
+        "query": [
+          ["chain", "sol"],
+          ["address", "11111111111111111111111111111112"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"address\":\"11111111111111111111111111111112\",\"pool_address\":\"11111111111111111111111111111113\",\"quote_address\":\"11111111111111111111111111111114\",\"quote_symbol\":\"[redacted text]\",\"liquidity\":\"29248.3143683538\",\"base_reserve\":\"120123405.651325\",\"quote_reserve\":\"141.954544595\",\"initial_liquidity\":\"17533.5110975962\",\"initial_base_reserve\":\"206900000\",\"initial_quote_reserve\":\"84.990359174\",\"creation_timestamp\":1788872787,\"base_reserve_value\":\"16919.34444773337433925\",\"quote_reserve_value\":\"14621.318093285\",\"quote_vault_address\":\"11111111111111111111111111111115\",\"base_vault_address\":\"11111111111111111111111111111116\",\"creator\":\"\",\"exchange\":\"[redacted text]\",\"token0_address\":\"\",\"token1_address\":\"\",\"base_address\":\"11111111111111111111111111111112\",\"fee_ratio\":\"0\"},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

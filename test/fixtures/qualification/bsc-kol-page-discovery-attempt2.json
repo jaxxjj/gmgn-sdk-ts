@@ -1,0 +1,48 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getKol",
+    "variant": "limit-2"
+  },
+  "capturedAt": "2026-09-08T13:49:58.229Z",
+  "inputs": {
+    "args": ["bsc", 2]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/kol",
+        "query": [
+          ["chain", "bsc"],
+          ["limit", "2"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"list\":[{\"transaction_hash\":\"fixture-id-1\",\"maker\":\"0x0000000000000000000000000000000000000002\",\"base_amount\":18160.34380249057,\"quote_amount\":0.001441755931881881,\"buy_cost_usd\":1.031063012566937,\"token_amount\":18160.34380249057,\"amount_usd\":1.0740072463367696,\"price\":7.95893167546659e-08,\"price_usd\":0.000059288469730053274,\"timestamp\":1788875396,\"side\":\"sell\",\"is_open_or_close\":1,\"base_address\":\"0x0000000000000000000000000000000000000003\",\"balance\":0,\"base_token\":{\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"1000000000\",\"launchpad\":\"[redacted text]\"},\"maker_info\":{\"avatar\":\"https://fixture.invalid/redacted\",\"name\":\"\",\"tags\":[\"[redacted text]\",\"[redacted text]\"],\"twitter_username\":\"[redacted text]\",\"twitter_name\":\"[redacted text]\"}},{\"transaction_hash\":\"fixture-id-4\",\"maker\":\"0x0000000000000000000000000000000000000005\",\"base_amount\":5768542.404805695,\"quote_amount\":1.3994634786105244,\"buy_cost_usd\":185.80765297272842,\"token_amount\":5768542.404805695,\"amount_usd\":158.1578871396713,\"price\":2.4321064272777406e-07,\"price_usd\":0.000027486020158166156,\"timestamp\":1788875394,\"side\":\"sell\",\"is_open_or_close\":1,\"base_address\":\"0x0000000000000000000000000000000000000006\",\"balance\":0,\"base_token\":{\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"1000000000\",\"launchpad\":\"[redacted text]\"},\"maker_info\":{\"avatar\":\"https://fixture.invalid/redacted\",\"name\":\"\",\"tags\":[\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\"],\"twitter_username\":\"[redacted text]\",\"twitter_name\":\"[redacted text]\"}}]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object",
+      "rows": 2
+    }
+  }
+}

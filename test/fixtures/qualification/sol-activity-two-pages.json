@@ -1,0 +1,82 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getWalletActivity",
+    "variant": "activity-two-pages"
+  },
+  "capturedAt": "2026-09-08T13:47:34.786Z",
+  "inputs": {
+    "args": [
+      "sol",
+      "11111111111111111111111111111112",
+      {
+        "limit": 2
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/wallet_activity",
+        "query": [
+          ["limit", "2"],
+          ["chain", "sol"],
+          ["wallet_address", "11111111111111111111111111111112"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"activities\":[{\"wallet\":\"11111111111111111111111111111112\",\"chain\":\"sol\",\"tx_hash\":\"fixture-id-2\",\"timestamp\":1788875240,\"event_type\":\"buy\",\"token\":{\"address\":\"11111111111111111111111111111114\",\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"1000000000\"},\"token_amount\":\"1955046.517067\",\"quote_amount\":\"0.304958073\",\"cost_usd\":\"25.097251236343336\",\"buy_cost_usd\":null,\"price_usd\":\"0.000012837163216962536\",\"price\":\"0.0000001559850726506\",\"is_open_or_close\":0,\"quote_token\":{\"token_address\":\"11111111111111111111111111111115\",\"name\":\"[redacted text]\",\"symbol\":\"[redacted text]\",\"decimals\":9,\"logo\":\"https://fixture.invalid/redacted\"},\"quote_address\":\"11111111111111111111111111111115\",\"from_address\":\"\",\"to_address\":\"\",\"gas_native\":\"0.0000275\",\"gas_usd\":\"0.00280665\",\"dex_native\":\"0\",\"dex_usd\":\"0\",\"priority_fee\":\"0.000025\",\"tip_fee\":\"0\",\"launchpad\":\"[redacted text]\",\"launchpad_platform\":\"[redacted text]\"},{\"wallet\":\"11111111111111111111111111111112\",\"chain\":\"sol\",\"tx_hash\":\"fixture-id-2\",\"timestamp\":1788875240,\"event_type\":\"buy\",\"token\":{\"address\":\"11111111111111111111111111111115\",\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"708222\"},\"token_amount\":\"0.304958073\",\"quote_amount\":\"25.096064\",\"cost_usd\":\"25.096064\",\"buy_cost_usd\":null,\"price_usd\":\"82.29348957094177\",\"price\":\"82.29348957094177\",\"is_open_or_close\":0,\"quote_token\":{\"token_address\":\"11111111111111111111111111111116\",\"name\":\"[redacted text]\",\"symbol\":\"[redacted text]\",\"decimals\":6,\"logo\":\"https://fixture.invalid/redacted\"},\"quote_address\":\"11111111111111111111111111111116\",\"from_address\":\"\",\"to_address\":\"\",\"gas_native\":\"0.0000275\",\"gas_usd\":\"0.00280665\",\"dex_native\":\"0.049286\",\"dex_usd\":\"0.049286\",\"priority_fee\":\"0.000025\",\"tip_fee\":\"0\",\"launchpad\":\"\",\"launchpad_platform\":\"\"}],\"next\":\"fixture-id-6\"},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/wallet_activity",
+        "query": [
+          ["limit", "2"],
+          ["cursor", "fixture-id-6"],
+          ["chain", "sol"],
+          ["wallet_address", "11111111111111111111111111111112"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"activities\":[{\"wallet\":\"11111111111111111111111111111112\",\"chain\":\"sol\",\"tx_hash\":\"fixture-id-7\",\"timestamp\":1788875227,\"event_type\":\"buy\",\"token\":{\"address\":\"11111111111111111111111111111114\",\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"1000000000\"},\"token_amount\":\"42372477.57507\",\"quote_amount\":\"2.440639271\",\"cost_usd\":\"200.94583192121672\",\"buy_cost_usd\":null,\"price_usd\":\"0.0000047423668244370026\",\"price\":\"0.00000005759963567568\",\"is_open_or_close\":1,\"quote_token\":{\"token_address\":\"11111111111111111111111111111115\",\"name\":\"[redacted text]\",\"symbol\":\"[redacted text]\",\"decimals\":9,\"logo\":\"https://fixture.invalid/redacted\"},\"quote_address\":\"11111111111111111111111111111115\",\"from_address\":\"\",\"to_address\":\"\",\"gas_native\":\"0.0025025\",\"gas_usd\":\"0.255280025\",\"dex_native\":\"0\",\"dex_usd\":\"0\",\"priority_fee\":\"0.0025\",\"tip_fee\":\"0\",\"launchpad\":\"[redacted text]\",\"launchpad_platform\":\"[redacted text]\"},{\"wallet\":\"11111111111111111111111111111112\",\"chain\":\"sol\",\"tx_hash\":\"fixture-id-7\",\"timestamp\":1788875227,\"event_type\":\"buy\",\"token\":{\"address\":\"11111111111111111111111111111115\",\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"708222\"},\"token_amount\":\"2.440639271\",\"quote_amount\":\"200.848728\",\"cost_usd\":\"200.848728\",\"buy_cost_usd\":null,\"price_usd\":\"82.29349186768863\",\"price\":\"82.29349186768863\",\"is_open_or_close\":0,\"quote_token\":{\"token_address\":\"11111111111111111111111111111116\",\"name\":\"[redacted text]\",\"symbol\":\"[redacted text]\",\"decimals\":6,\"logo\":\"https://fixture.invalid/redacted\"},\"quote_address\":\"11111111111111111111111111111116\",\"from_address\":\"\",\"to_address\":\"\",\"gas_native\":\"0.0025025\",\"gas_usd\":\"0.255280025\",\"dex_native\":\"0.394438\",\"dex_usd\":\"0.394438\",\"priority_fee\":\"0.0025\",\"tip_fee\":\"0\",\"launchpad\":\"\",\"launchpad_platform\":\"\"}],\"next\":\"fixture-id-8\"},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "array",
+      "rows": 2
+    }
+  }
+}

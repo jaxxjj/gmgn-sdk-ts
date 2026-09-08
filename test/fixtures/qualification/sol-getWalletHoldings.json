@@ -1,0 +1,55 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getWalletHoldings"
+  },
+  "capturedAt": "2026-09-08T13:17:58.714Z",
+  "inputs": {
+    "args": [
+      "sol",
+      "11111111111111111111111111111112",
+      {
+        "limit": 2
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/wallet_holdings",
+        "query": [
+          ["limit", "2"],
+          ["chain", "sol"],
+          ["wallet_address", "11111111111111111111111111111112"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json",
+          "x-signature": "<present>"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"list\":[{\"balance\":\"25310503.146475\",\"usd_value\":\"457.673351260159069775\",\"accu_amount\":\"25310503.146475\",\"accu_cost\":\"754.94943163296\",\"accu_fee\":\"17.18025915704\",\"history_bought_amount\":\"25310503.146475\",\"history_bought_cost\":\"754.94943163296\",\"history_bought_fee\":\"17.18025915704\",\"history_transfer_in_amount\":\"0\",\"history_transfer_in_cost\":\"0\",\"history_sold_amount\":\"0\",\"history_sold_income\":\"0\",\"history_sold_fee\":\"0\",\"history_transfer_out_amount\":\"0\",\"history_transfer_out_income\":\"0\",\"history_transfer_out_fee\":\"0\",\"history_total_buys\":4,\"history_total_sells\":0,\"history_total_transfer_ins\":0,\"history_total_transfer_outs\":0,\"realized_profit\":\"0\",\"realized_profit_pnl\":null,\"unrealized_profit\":\"-314.45633952984105\",\"unrealized_profit_pnl\":\"-0.407258448005162\",\"total_profit\":\"-314.45633952984105\",\"total_profit_pnl\":\"-0.407258448005162\",\"start_holding_at\":1788872500,\"end_holding_at\":0,\"last_block\":445347780,\"last_active_timestamp\":1788873459,\"token\":{\"token_address\":\"11111111111111111111111111111113\",\"symbol\":\"[redacted text]\",\"name\":\"[redacted text]\",\"decimals\":6,\"logo\":\"https://fixture.invalid/redacted\",\"creation_timestamp\":1788871185,\"open_timestamp\":1788871185,\"is_show_alert\":false,\"is_honeypot\":false,\"price\":\"0.000018082349\",\"total_supply\":\"1000000000\",\"max_supply\":\"1000000000\",\"liquidity\":\"15582.8764669665\",\"launchpad\":\"[redacted text]\",\"launchpad_platform\":\"[redacted text]\"},\"wallet_token_tags\":null},{\"balance\":\"10\",\"usd_value\":\"0.00048451668\",\"accu_amount\":\"10\",\"accu_cost\":\"0.00042347986\",\"accu_fee\":\"0\",\"history_bought_amount\":\"0\",\"history_bought_cost\":\"0\",\"history_bought_fee\":\"0\",\"history_transfer_in_amount\":\"10\",\"history_transfer_in_cost\":\"0.00042347986\",\"history_sold_amount\":\"0\",\"history_sold_income\":\"0\",\"history_sold_fee\":\"0\",\"history_transfer_out_amount\":\"0\",\"history_transfer_out_income\":\"0\",\"history_transfer_out_fee\":\"0\",\"history_total_buys\":0,\"history_total_sells\":0,\"history_total_transfer_ins\":1,\"history_total_transfer_outs\":0,\"realized_profit\":\"0\",\"realized_profit_pnl\":null,\"unrealized_profit\":\"0\",\"unrealized_profit_pnl\":null,\"total_profit\":\"0\",\"total_profit_pnl\":\"0\",\"start_holding_at\":1788872867,\"end_holding_at\":0,\"last_block\":445345910,\"last_active_timestamp\":1788872867,\"token\":{\"token_address\":\"11111111111111111111111111111114\",\"symbol\":\"[redacted text]\",\"name\":\"[redacted text]\",\"decimals\":6,\"logo\":\"https://fixture.invalid/redacted\",\"creation_timestamp\":1788872836,\"open_timestamp\":1788872837,\"is_show_alert\":false,\"is_honeypot\":false,\"price\":\"0.000048451668\",\"total_supply\":\"966385370\",\"max_supply\":\"966385370\",\"liquidity\":\"15153.31452424224\",\"launchpad\":\"[redacted text]\",\"launchpad_platform\":\"[redacted text]\"},\"wallet_token_tags\":null}],\"next\":\"[redacted text]\"},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object",
+      "rows": 2
+    }
+  }
+}

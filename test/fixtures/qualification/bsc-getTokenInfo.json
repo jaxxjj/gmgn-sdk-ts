@@ -1,0 +1,46 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getTokenInfo"
+  },
+  "capturedAt": "2026-09-08T13:23:55.747Z",
+  "inputs": {
+    "args": ["bsc", "0x0000000000000000000000000000000000000001"]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/token/info",
+        "query": [
+          ["chain", "bsc"],
+          ["address", "0x0000000000000000000000000000000000000001"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"symbol\":\"[redacted text]\",\"name\":\"[redacted text]\",\"decimals\":18,\"logo\":\"https://fixture.invalid/redacted\",\"banner\":\"\",\"biggest_pool_address\":\"0x0000000000000000000000000000000000000002\",\"open_timestamp\":1788869473,\"migrated_timestamp\":1788869473,\"holder_count\":1439,\"circulating_supply\":\"1000000000\",\"total_supply\":\"1000000000\",\"max_supply\":\"1000000000\",\"liquidity\":\"37314.24745184195\",\"creation_timestamp\":1788797062,\"standard\":\"[redacted text]\",\"trade_fee\":\"10.04706620051954\",\"total_fee\":\"12.445662230392927\",\"og\":true,\"image_dup_count\":0,\"visiting_count\":250,\"launchpad\":\"[redacted text]\",\"launchpad_status\":1,\"launchpad_progress\":1,\"launchpad_platform\":\"[redacted text]\",\"migrated_pool\":\"0x0000000000000000000000000000000000000002\",\"migration_market_cap\":72.1,\"migration_market_cap_quote\":\"[redacted text]\",\"ath_price\":0.001260459,\"locked_ratio\":0,\"price\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"price\":\"0.00012039536\",\"price_1m\":\"0.00011205522\",\"price_5m\":\"0.00012615105\",\"price_1h\":\"0.00037365791\",\"price_6h\":\"0.00001221166\",\"price_24h\":\"0.0000045162779\",\"buys_1m\":16,\"buys_5m\":164,\"buys_1h\":10169,\"buys_6h\":16808,\"buys_24h\":18567,\"sells_1m\":55,\"sells_5m\":92,\"sells_1h\":10435,\"sells_6h\":18074,\"sells_24h\":19034,\"volume_1m\":\"808.1355935\",\"volume_5m\":\"5488.59273865\",\"volume_1h\":\"1133449.79873988\",\"volume_6h\":\"2014816.86800287\",\"volume_24h\":\"2136136.30639102\",\"buy_volume_1m\":\"557.98116508\",\"buy_volume_5m\":\"2220.70152234\",\"buy_volume_1h\":\"465078.71387871\",\"buy_volume_6h\":\"853272.31958624\",\"buy_volume_24h\":\"916521.33127685\",\"sell_volume_1m\":\"250.15442841\",\"sell_volume_5m\":\"3267.89121631\",\"sell_volume_1h\":\"668371.084861163\",\"sell_volume_6h\":\"1161544.54841662\",\"sell_volume_24h\":\"1219614.97511415\",\"swaps_1m\":71,\"swaps_5m\":256,\"swaps_1h\":20604,\"swaps_6h\":34882,\"swaps_24h\":37601,\"hot_level\":3},\"pool\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"pool_address\":\"0x0000000000000000000000000000000000000002\",\"quote_address\":\"0x0000000000000000000000000000000000000003\",\"quote_symbol\":\"[redacted text]\",\"liquidity\":\"37314.24745184195\",\"base_reserve\":\"154979719.661214103087067263\",\"quote_reserve\":\"24.852637804106745823\",\"initial_liquidity\":\"0\",\"initial_base_reserve\":\"0\",\"initial_quote_reserve\":\"0\",\"creation_timestamp\":0,\"base_reserve_value\":\"18658.83914131094997824457447309968\",\"quote_reserve_value\":\"15199.65445500697885369623323438\",\"quote_vault_address\":\"\",\"base_vault_address\":\"\",\"creator\":\"\",\"exchange\":\"[redacted text]\",\"token0_address\":\"0x0000000000000000000000000000000000000001\",\"token1_address\":\"0x0000000000000000000000000000000000000003\",\"base_address\":\"0x0000000000000000000000000000000000000001\",\"fee_ratio\":\"0\"},\"dev\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"creator_address\":\"0x0000000000000000000000000000000000000004\",\"creator_token_balance\":\"0\",\"creator_token_status\":\"[redacted text]\",\"twitter_name_change_history\":[],\"top_10_holder_rate\":\"0.2048\",\"dexscr_ad\":0,\"dexscr_update_link\":1,\"cto_flag\":1,\"dexscr_boost_fee\":0,\"dexscr_trending_bar\":0,\"dexscr_ad_ts\":0,\"dexscr_update_link_ts\":1788870806,\"dexscr_boost_ts\":0,\"dexscr_trending_bar_ts\":0,\"twitter_del_post_token_count\":0,\"twitter_create_token_count\":2,\"fund_from\":\"[redacted text]\",\"fund_from_ts\":1748876071,\"creator_open_count\":4,\"offchain\":false,\"ath_token_info\":{\"ath_token\":\"0x0000000000000000000000000000000000000005\",\"ath_mc\":\"8997818.6254602\",\"avatar\":\"https://fixture.invalid/redacted\",\"symbol\":\"[redacted text]\",\"name\":\"[redacted text]\",\"creation_timestamp\":1788852273}},\"link\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"gmgn\":\"https://fixture.invalid/redacted\",\"geckoterminal\":\"\",\"twitter_username\":\"[redacted text]\",\"website\":\"\",\"telegram\":\"\",\"bitbucket\":\"\",\"discord\":\"\",\"description\":\"\",\"facebook\":\"\",\"github\":\"\",\"instagram\":\"\",\"linkedin\":\"\",\"medium\":\"\",\"reddit\":\"\",\"tiktok\":\"\",\"youtube\":\"\",\"verify_status\":0,\"fracaster\":null},\"stat\":{\"holder_count\":1439,\"signal_count\":0,\"degen_call_count\":0,\"top_rat_trader_percentage\":\"0\",\"top_bundler_trader_percentage\":\"0.1396\",\"top_entrapment_trader_percentage\":\"0.3659\",\"top_bot_degen_percentage\":\"0.5884\",\"creator_created_count\":85,\"bot_degen_count\":904,\"bot_degen_rate\":\"0.5884\",\"fresh_wallet_rate\":\"0.0968\",\"top_10_holder_rate\":\"0.2048\",\"dev_team_hold_rate\":\"0\",\"creator_hold_rate\":\"0\",\"creator_token_balance\":\"0\",\"private_vault_hold_rate\":\"0\",\"top70_sniper_hold_rate\":\"0\"},\"wallet_tags_stat\":{\"smart_wallets\":79,\"fresh_wallets\":473,\"renowned_wallets\":30,\"creator_wallets\":1,\"sniper_wallets\":0,\"rat_trader_wallets\":0,\"whale_wallets\":0,\"top_wallets\":97,\"bundler_wallets\":655},\"fee_distribution\":{\"launchpad\":\"[redacted text]\",\"platform_data\":null}},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getWalletStats"
+  },
+  "capturedAt": "2026-09-08T13:18:26.473Z",
+  "inputs": {
+    "args": ["sol", ["11111111111111111111111111111112"], "7d"]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/wallet_stats",
+        "query": [
+          ["chain", "sol"],
+          ["wallet_address", "11111111111111111111111111111112"],
+          ["period", "7d"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"wallet_address\":\"11111111111111111111111111111112\",\"native_balance\":\"25.622069542\",\"realized_profit\":\"19884.37650462384844972556\",\"realized_profit_pnl\":\"0.1885997059409717\",\"buy\":435,\"sell\":166,\"bought_cost\":\"102115.11249747105699825122\",\"bought_fee\":\"1231.9272007473783335\",\"sold_income\":\"117905.32529635739130630117\",\"sold_fee\":\"497.0019188902416669\",\"total_cost\":\"119218.30560095381195571729\",\"last_timestamp\":1788873459,\"pnl_stat\":{\"token_num\":734,\"winrate\":0.4666666666666667,\"pnl_lt_nd5_num\":15,\"pnl_nd5_0x_num\":48,\"pnl_0x_2x_num\":665,\"pnl_2x_5x_num\":3,\"pnl_gt_5x_num\":3,\"avg_holding_period\":328357.6598079561},\"common\":{\"avatar\":\"https://fixture.invalid/redacted\",\"name\":\"\",\"ens\":\"\",\"tag\":\"\",\"tags\":[\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\",\"[redacted text]\"],\"tag_rank\":{\"app_smart_money\":0,\"arbitrager\":0,\"axiom\":0,\"kol\":0,\"padre\":0,\"top_followed\":0,\"top_renamed\":0},\"nick_name\":\"\",\"created_at\":1709126573,\"twitter_name\":\"[redacted text]\",\"twitter_username\":\"[redacted text]\",\"is_blue_verified\":true,\"twitter_bind\":true,\"twitter_fans_num\":127289,\"twitter_description\":\"[redacted text]\",\"followers_count\":127289,\"follow_count\":39849,\"remark_count\":28007,\"created_token_count\":56,\"fund_from\":\"\",\"fund_from_ts\":1741226728,\"fund_tx_hash\":\"[redacted text]\",\"wallet_address\":\"\",\"fund_from_address\":\"11111111111111111111111111111113\",\"fund_amount\":\"1\"}},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

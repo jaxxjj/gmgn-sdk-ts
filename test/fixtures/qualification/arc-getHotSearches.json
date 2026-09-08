@@ -1,0 +1,53 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getHotSearches"
+  },
+  "capturedAt": "2026-09-08T13:38:40.035Z",
+  "inputs": {
+    "args": [
+      [
+        {
+          "chain": "arc",
+          "interval": "1h",
+          "limit": 2
+        }
+      ]
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/market/hot_searches",
+        "query": [
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": "{\"params\":[{\"chain\":\"arc\",\"interval\":\"1h\",\"limit\":2}]}"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":[{\"interval\":\"[redacted text]\",\"chain\":\"arc\",\"version\":\"[redacted text]\",\"tokens\":[]}],\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "array",
+      "rows": 1
+    }
+  }
+}

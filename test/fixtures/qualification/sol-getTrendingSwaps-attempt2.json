@@ -1,0 +1,53 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getTrendingSwaps"
+  },
+  "capturedAt": "2026-09-08T13:17:51.900Z",
+  "inputs": {
+    "args": [
+      "sol",
+      "1h",
+      {
+        "limit": 2
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/market/rank",
+        "query": [
+          ["limit", "2"],
+          ["chain", "sol"],
+          ["interval", "1h"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"code\":0,\"data\":{\"rank\":[{\"id\":0,\"chain\":\"sol\",\"address\":\"11111111111111111111111111111112\",\"name\":\"[redacted text]\",\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"price\":0.000137481,\"price_change_percent\":4221.95,\"price_change_percent1m\":-18.0889,\"price_change_percent5m\":-33.5424,\"price_change_percent1h\":4221.95,\"volume\":909313,\"liquidity\":28804.9,\"market_cap\":136128,\"total_supply\":990159115,\"initial_liquidity\":17533.5,\"history_highest_market_cap\":333458,\"swaps\":11993,\"buys\":6518,\"sells\":5475,\"holder_count\":1010,\"top_10_holder_rate\":0.2095,\"open_timestamp\":1788872787,\"creation_timestamp\":1788872787,\"pool_type\":0,\"pool_type_str\":\"\",\"launchpad\":\"[redacted text]\",\"launchpad_platform\":\"[redacted text]\",\"launchpad_status\":\"1\",\"exchange\":\"[redacted text]\",\"twitter_username\":\"https://fixture.invalid/redacted\",\"website\":\"https://fixture.invalid/redacted\",\"telegram\":\"\",\"renounced_mint\":1,\"renounced_freeze_account\":1,\"burn_ratio\":0,\"burn_status\":\"[redacted text]\",\"dev_token_burn_amount\":0,\"dev_token_burn_ratio\":0,\"creator\":\"11111111111111111111111111111113\",\"creator_token_status\":\"[redacted text]\",\"creator_close\":true,\"hot_level\":3,\"is_show_alert\":false,\"is_wash_trading\":false,\"image_dup\":\"0\",\"dexscr_ad\":0,\"dexscr_update_link\":0,\"cto_flag\":0,\"twitter_change_flag\":0,\"twitter_rename_count\":0,\"twitter_del_post_token_count\":0,\"twitter_create_token_count\":27,\"rat_trader_amount_rate\":0.0001,\"bluechip_owner_percentage\":0,\"rug_ratio\":0.08333333333333333,\"sniper_count\":74,\"smart_degen_count\":62,\"renowned_count\":5,\"bundler_rate\":0.5815,\"entrapment_ratio\":0.0275,\"dexscr_trending_bar\":0,\"dexscr_boost_fee\":0,\"is_og\":false,\"gas_fee\":22.12512573546229,\"is_token_live\":false,\"start_live_timestamp\":0,\"end_live_timestamp\":0,\"tcid\":\"\",\"dev_team_hold_rate\":0,\"top70_sniper_hold_rate\":0.0005909077,\"bot_degen_count\":704,\"buy_tax\":\"\",\"sell_tax\":\"\",\"is_honeypot\":0,\"is_renounced\":0,\"is_open_source\":0,\"lock_percent\":0,\"bot_degen_rate\":0.7153,\"dexscr_ad_ts\":0,\"dexscr_update_link_ts\":0,\"dexscr_boost_ts\":0,\"dexscr_trending_bar_ts\":0,\"twitter_dup\":0,\"telegram_dup\":0,\"website_dup\":0,\"rank\":1,\"square_mentions\":0,\"visiting_count\":299,\"trans_name\":\"\",\"trans_symbol\":\"\",\"trans_name_zhcn\":\"[redacted text]\",\"trans_symbol_zhcn\":\"[redacted text]\",\"launch_quote_address\":\"11111111111111111111111111111114\",\"migrated_pool_exchange\":\"[redacted text]\"},{\"id\":0,\"chain\":\"sol\",\"address\":\"11111111111111111111111111111115\",\"name\":\"[redacted text]\",\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"price\":0.000121367,\"price_change_percent\":997.884,\"price_change_percent1m\":18.2391,\"price_change_percent5m\":-33.1435,\"price_change_percent1h\":997.884,\"volume\":117057,\"liquidity\":26037.9,\"market_cap\":121025,\"total_supply\":997185000,\"initial_liquidity\":17531.8,\"history_highest_market_cap\":1162287,\"swaps\":13826,\"buys\":7193,\"sells\":6633,\"holder_count\":1465,\"top_10_holder_rate\":0.1122,\"open_timestamp\":1788871942,\"creation_timestamp\":1788871942,\"pool_type\":0,\"pool_type_str\":\"\",\"launchpad\":\"[redacted text]\",\"launchpad_platform\":\"[redacted text]\",\"launchpad_status\":\"1\",\"exchange\":\"[redacted text]\",\"twitter_username\":\"https://fixture.invalid/redacted\",\"website\":\"https://fixture.invalid/redacted\",\"telegram\":\"\",\"renounced_mint\":1,\"renounced_freeze_account\":1,\"burn_ratio\":0,\"burn_status\":\"[redacted text]\",\"dev_token_burn_amount\":0,\"dev_token_burn_ratio\":0,\"creator\":\"11111111111111111111111111111116\",\"creator_token_status\":\"[redacted text]\",\"creator_close\":false,\"hot_level\":3,\"is_show_alert\":false,\"is_wash_trading\":false,\"image_dup\":\"3\",\"dexscr_ad\":0,\"dexscr_update_link\":0,\"cto_flag\":0,\"twitter_change_flag\":0,\"twitter_rename_count\":0,\"twitter_del_post_token_count\":0,\"twitter_create_token_count\":45,\"rat_trader_amount_rate\":0.0594,\"bluechip_owner_percentage\":0,\"rug_ratio\":0.524,\"sniper_count\":0,\"smart_degen_count\":0,\"renowned_count\":0,\"bundler_rate\":0.0806,\"entrapment_ratio\":0.7488,\"dexscr_trending_bar\":0,\"dexscr_boost_fee\":0,\"is_og\":false,\"gas_fee\":0.16602989110978944,\"is_token_live\":false,\"start_live_timestamp\":0,\"end_live_timestamp\":0,\"tcid\":\"\",\"dev_team_hold_rate\":0.0805664869,\"top70_sniper_hold_rate\":0.0805665043,\"bot_degen_count\":3,\"buy_tax\":\"\",\"sell_tax\":\"\",\"is_honeypot\":0,\"is_renounced\":0,\"is_open_source\":0,\"lock_percent\":0,\"bot_degen_rate\":0.0768,\"dexscr_ad_ts\":0,\"dexscr_update_link_ts\":0,\"dexscr_boost_ts\":0,\"dexscr_trending_bar_ts\":0,\"twitter_dup\":34,\"telegram_dup\":0,\"website_dup\":4,\"rank\":2,\"square_mentions\":0,\"visiting_count\":35,\"trans_name\":\"\",\"trans_symbol\":\"\",\"trans_name_zhcn\":\"[redacted text]\",\"trans_symbol_zhcn\":\"[redacted text]\",\"launch_quote_address\":\"11111111111111111111111111111114\",\"migrated_pool_exchange\":\"[redacted text]\"}]},\"message\":\"[redacted text]\",\"reason\":\"\"}}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "searchMarket"
+  },
+  "capturedAt": "2026-09-08T13:25:48.399Z",
+  "inputs": {
+    "args": ["0x0000000000000000000000000000000000000001", {}]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/market/search",
+        "query": [
+          ["q", "0x0000000000000000000000000000000000000001"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"coins\":[{\"chain\":\"bsc\",\"address\":\"0x0000000000000000000000000000000000000001\",\"name\":\"[redacted text]\",\"symbol\":\"[redacted text]\",\"trans_name\":\"\",\"trans_symbol\":\"\",\"trans_name_zhcn\":\"[redacted text]\",\"trans_symbol_zhcn\":\"[redacted text]\",\"remark_name\":\"\",\"logo\":\"https://fixture.invalid/redacted\",\"created_at\":1788869473,\"price\":\"0.0001398903\",\"price_24h\":\"0.0000045162779\",\"volume_1h\":1105433,\"volume_24h\":2138858,\"mcp\":\"139890.3\",\"liquidity\":\"39916.54468496342\",\"follow_state\":false,\"quote_address\":\"0x0000000000000000000000000000000000000002\",\"launch_quote_address\":\"0x0000000000000000000000000000000000000003\",\"standard\":\"[redacted text]\",\"hot_level\":3,\"swaps_5m\":287,\"swaps_1h\":20057,\"swaps_6h\":35015,\"swaps_24h\":37734,\"is_show_alert\":false,\"is_honeypot\":false,\"renounced_freeze_account\":null,\"buy_tax\":\"0.02\",\"sell_tax\":\"0.02\",\"total_buy_tax\":0.0225,\"total_sell_tax\":0.0225,\"token_link\":{\"address\":\"0x0000000000000000000000000000000000000001\",\"gmgn\":\"https://fixture.invalid/redacted\",\"geckoterminal\":\"\",\"twitter_username\":\"[redacted text]\",\"website\":\"\",\"telegram\":\"\",\"bitbucket\":\"\",\"discord\":\"\",\"description\":\"\",\"facebook\":\"\",\"github\":\"\",\"instagram\":\"\",\"linkedin\":\"\",\"medium\":\"\",\"reddit\":\"\",\"tiktok\":\"\",\"youtube\":\"\",\"verify_status\":0,\"fracaster\":null},\"dexscr_ad\":0,\"dexscr_update_link\":1,\"dexscr_boost_fee\":0,\"dexscr_trending_bar_ts\":0,\"cto_flag\":1,\"launchpad\":\"[redacted text]\",\"launchpad_platform\":\"[redacted text]\",\"launchpad_status\":1,\"exchange\":\"0x0000000000000000000000000000000000000004\",\"migrated_pool_exchange\":\"0x0000000000000000000000000000000000000004\",\"twitter_change_flag\":0,\"twitter_rename_count\":1,\"creator\":\"0x0000000000000000000000000000000000000005\",\"progress\":1,\"is_og\":true,\"holder_count\":1442,\"offchain\":false,\"creation_tool\":\"\",\"visiting_count\":250,\"ath_market_cap\":\"1260459\",\"total_fee\":\"12.4571129155609567\",\"tax_allocation\":{\"dev_fee\":\"0\",\"dividend\":\"0\",\"burn_rate\":\"0\",\"liquidity\":\"0\",\"marketing\":\"1\",\"giggle_charity\":\"0\",\"binance_charity\":\"0\",\"market_address\":\"0x0000000000000000000000000000000000000006\",\"is_vault\":true,\"vault_factory\":\"0x0000000000000000000000000000000000000007\"},\"kol_count\":30}],\"wallets\":[{\"chain\":\"eth\",\"address\":\"0x0000000000000000000000000000000000000001\",\"remark_name\":\"\",\"twitter_username\":\"\",\"twitter_name\":\"\",\"twitter_fans_num\":0,\"ens\":\"\",\"avatar\":\"\",\"wallet_tags\":[],\"follow_state\":false,\"fund_from\":\"\",\"fund_from_ts\":0,\"balance\":\"\",\"follow_count\":0,\"remark_count\":0,\"last_active_time\":0,\"pnl_7d\":\"\",\"realized_profit_7d\":\"\",\"win_rate_7d\":0},{\"chain\":\"base\",\"address\":\"0x0000000000000000000000000000000000000001\",\"remark_name\":\"\",\"twitter_username\":\"\",\"twitter_name\":\"\",\"twitter_fans_num\":0,\"ens\":\"\",\"avatar\":\"\",\"wallet_tags\":[],\"follow_state\":false,\"fund_from\":\"\",\"fund_from_ts\":0,\"balance\":\"\",\"follow_count\":0,\"remark_count\":0,\"last_active_time\":0,\"pnl_7d\":\"\",\"realized_profit_7d\":\"\",\"win_rate_7d\":0},{\"chain\":\"monad\",\"address\":\"0x0000000000000000000000000000000000000001\",\"remark_name\":\"\",\"twitter_username\":\"\",\"twitter_name\":\"\",\"twitter_fans_num\":0,\"ens\":\"\",\"avatar\":\"\",\"wallet_tags\":[],\"follow_state\":false,\"fund_from\":\"\",\"fund_from_ts\":0,\"balance\":\"\",\"follow_count\":0,\"remark_count\":0,\"last_active_time\":0,\"pnl_7d\":\"\",\"realized_profit_7d\":\"\",\"win_rate_7d\":0},{\"chain\":\"megaeth\",\"address\":\"0x0000000000000000000000000000000000000001\",\"remark_name\":\"\",\"twitter_username\":\"\",\"twitter_name\":\"\",\"twitter_fans_num\":0,\"ens\":\"\",\"avatar\":\"\",\"wallet_tags\":[],\"follow_state\":false,\"fund_from\":\"\",\"fund_from_ts\":0,\"balance\":\"\",\"follow_count\":0,\"remark_count\":0,\"last_active_time\":0,\"pnl_7d\":\"\",\"realized_profit_7d\":\"\",\"win_rate_7d\":0},{\"chain\":\"hyperevm\",\"address\":\"0x0000000000000000000000000000000000000001\",\"remark_name\":\"\",\"twitter_username\":\"\",\"twitter_name\":\"\",\"twitter_fans_num\":0,\"ens\":\"\",\"avatar\":\"\",\"wallet_tags\":[],\"follow_state\":false,\"fund_from\":\"\",\"fund_from_ts\":0,\"balance\":\"\",\"follow_count\":0,\"remark_count\":0,\"last_active_time\":0,\"pnl_7d\":\"\",\"realized_profit_7d\":\"\",\"win_rate_7d\":0},{\"chain\":\"xlayer\",\"address\":\"0x0000000000000000000000000000000000000001\",\"remark_name\":\"\",\"twitter_username\":\"\",\"twitter_name\":\"\",\"twitter_fans_num\":0,\"ens\":\"\",\"avatar\":\"\",\"wallet_tags\":[],\"follow_state\":false,\"fund_from\":\"\",\"fund_from_ts\":0,\"balance\":\"\",\"follow_count\":0,\"remark_count\":0,\"last_active_time\":0,\"pnl_7d\":\"\",\"realized_profit_7d\":\"\",\"win_rate_7d\":0},{\"chain\":\"robinhood\",\"address\":\"0x0000000000000000000000000000000000000001\",\"remark_name\":\"\",\"twitter_username\":\"\",\"twitter_name\":\"\",\"twitter_fans_num\":0,\"ens\":\"\",\"avatar\":\"\",\"wallet_tags\":[],\"follow_state\":false,\"fund_from\":\"\",\"fund_from_ts\":0,\"balance\":\"\",\"follow_count\":0,\"remark_count\":0,\"last_active_time\":0,\"pnl_7d\":\"\",\"realized_profit_7d\":\"\",\"win_rate_7d\":0},{\"chain\":\"arbitrum\",\"address\":\"0x0000000000000000000000000000000000000001\",\"remark_name\":\"\",\"twitter_username\":\"\",\"twitter_name\":\"\",\"twitter_fans_num\":0,\"ens\":\"\",\"avatar\":\"\",\"wallet_tags\":[],\"follow_state\":false,\"fund_from\":\"\",\"fund_from_ts\":0,\"balance\":\"\",\"follow_count\":0,\"remark_count\":0,\"last_active_time\":0,\"pnl_7d\":\"\",\"realized_profit_7d\":\"\",\"win_rate_7d\":0},{\"chain\":\"arc\",\"address\":\"0x0000000000000000000000000000000000000001\",\"remark_name\":\"\",\"twitter_username\":\"\",\"twitter_name\":\"\",\"twitter_fans_num\":0,\"ens\":\"\",\"avatar\":\"\",\"wallet_tags\":[],\"follow_state\":false,\"fund_from\":\"\",\"fund_from_ts\":0,\"balance\":\"\",\"follow_count\":0,\"remark_count\":0,\"last_active_time\":0,\"pnl_7d\":\"\",\"realized_profit_7d\":\"\",\"win_rate_7d\":0},{\"chain\":\"stable\",\"address\":\"0x0000000000000000000000000000000000000001\",\"remark_name\":\"\",\"twitter_username\":\"\",\"twitter_name\":\"\",\"twitter_fans_num\":0,\"ens\":\"\",\"avatar\":\"\",\"wallet_tags\":[],\"follow_state\":false,\"fund_from\":\"\",\"fund_from_ts\":0,\"balance\":\"\",\"follow_count\":0,\"remark_count\":0,\"last_active_time\":0,\"pnl_7d\":\"\",\"realized_profit_7d\":\"\",\"win_rate_7d\":0}]},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

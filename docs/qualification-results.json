@@ -1,0 +1,2954 @@
+{
+  "format": "sdk-qualification/v1",
+  "service": "gmgn",
+  "capturedAt": "2026-09-08T13:13:32.592Z",
+  "scope": "Finite read-only sample. Passed means SDK envelope accepted, not exhaustive semantic validation.",
+  "cases": [
+    {
+      "id": "sol-getKol",
+      "operation": "getKol",
+      "chain": "sol",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "sol-getTrendingSwaps",
+      "operation": "getTrendingSwaps",
+      "chain": "sol",
+      "variant": "1h-limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getTokenInfo",
+      "operation": "getTokenInfo",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getTokenSecurity",
+      "operation": "getTokenSecurity",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getTokenPoolInfo",
+      "operation": "getTokenPoolInfo",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getTokenTopHolders",
+      "operation": "getTokenTopHolders",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "sol-getTokenTopTraders",
+      "operation": "getTokenTopTraders",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "sol-getTokenKline",
+      "operation": "getTokenKline",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 0
+      }
+    },
+    {
+      "id": "sol-getTrenches",
+      "operation": "getTrenches",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getTokenSignals",
+      "operation": "getTokenSignals",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 50
+      }
+    },
+    {
+      "id": "sol-getHotSearches",
+      "operation": "getHotSearches",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 1
+      }
+    },
+    {
+      "id": "sol-searchMarket",
+      "operation": "searchMarket",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getUserInfo",
+      "operation": "getUserInfo",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getFollowWallet",
+      "operation": "getFollowWallet",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "failed",
+      "recorded": true,
+      "ok": false,
+      "error": {
+        "kind": "http",
+        "status": 429,
+        "apiCode": 429
+      }
+    },
+    {
+      "id": "sol-getKol-attempt2",
+      "operation": "getKol",
+      "chain": "sol",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "sol-getTrendingSwaps-attempt2",
+      "operation": "getTrendingSwaps",
+      "chain": "sol",
+      "variant": "1h-limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getWalletHoldings",
+      "operation": "getWalletHoldings",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "sol-getWalletActivity",
+      "operation": "getWalletActivity",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getFollowTokens",
+      "operation": "getFollowTokens",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getCreatedTokens",
+      "operation": "getCreatedTokens",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getWalletStats",
+      "operation": "getWalletStats",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getWalletProfits",
+      "operation": "getWalletProfits",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 1
+      }
+    },
+    {
+      "id": "sol-getWalletTokenBalance",
+      "operation": "getWalletTokenBalance",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getFollowWallet-attempt2",
+      "operation": "getFollowWallet",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "failed",
+      "recorded": true,
+      "ok": false,
+      "error": {
+        "kind": "http",
+        "status": 429,
+        "apiCode": 429
+      }
+    },
+    {
+      "id": "sol-getKol-attempt3",
+      "operation": "getKol",
+      "chain": "sol",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "sol-getTrendingSwaps-attempt3",
+      "operation": "getTrendingSwaps",
+      "chain": "sol",
+      "variant": "1h-limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getFollowGroupNames",
+      "operation": "getFollowGroupNames",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 1
+      }
+    },
+    {
+      "id": "sol-getSmartMoney",
+      "operation": "getSmartMoney",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "sol-quoteOrder",
+      "operation": "quoteOrder",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "failed",
+      "recorded": true,
+      "ok": false,
+      "error": {
+        "kind": "http",
+        "status": 429,
+        "apiCode": 429
+      }
+    },
+    {
+      "id": "sol-getKol-attempt4",
+      "operation": "getKol",
+      "chain": "sol",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "sol-getTrendingSwaps-attempt4",
+      "operation": "getTrendingSwaps",
+      "chain": "sol",
+      "variant": "1h-limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-getTokenSignalV2",
+      "operation": "getTokenSignalV2",
+      "chain": "sol",
+      "status": "not-run",
+      "reason": "deprecated-alias-tested-offline",
+      "recorded": false
+    },
+    {
+      "id": "sol-queryOrder",
+      "operation": "queryOrder",
+      "chain": "sol",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "sol-getGasPrice",
+      "operation": "getGasPrice",
+      "chain": "sol",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "sol-getStrategyOrders",
+      "operation": "getStrategyOrders",
+      "chain": "sol",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "sol-getCookingStatistics",
+      "operation": "getCookingStatistics",
+      "chain": "sol",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 12
+      }
+    },
+    {
+      "id": "sol-swap",
+      "operation": "swap",
+      "chain": "sol",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "sol-multiSwap",
+      "operation": "multiSwap",
+      "chain": "sol",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "sol-createStrategyOrder",
+      "operation": "createStrategyOrder",
+      "chain": "sol",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "sol-cancelStrategyOrder",
+      "operation": "cancelStrategyOrder",
+      "chain": "sol",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "sol-createToken",
+      "operation": "createToken",
+      "chain": "sol",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "sol-kol-limit1",
+      "operation": "getKol",
+      "chain": "sol",
+      "variant": "limit-1",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 1
+      }
+    },
+    {
+      "id": "sol-rank24h",
+      "operation": "getTrendingSwaps",
+      "chain": "sol",
+      "variant": "24h",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-getKol",
+      "operation": "getKol",
+      "chain": "bsc",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "bsc-getTrendingSwaps",
+      "operation": "getTrendingSwaps",
+      "chain": "bsc",
+      "variant": "1h-limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-getTokenInfo",
+      "operation": "getTokenInfo",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-getTokenSecurity",
+      "operation": "getTokenSecurity",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-getTokenPoolInfo",
+      "operation": "getTokenPoolInfo",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-getTokenTopHolders",
+      "operation": "getTokenTopHolders",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "bsc-getTokenTopTraders",
+      "operation": "getTokenTopTraders",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "bsc-getTokenKline",
+      "operation": "getTokenKline",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 0
+      }
+    },
+    {
+      "id": "bsc-getWalletHoldings",
+      "operation": "getWalletHoldings",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "bsc-getWalletActivity",
+      "operation": "getWalletActivity",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-getFollowTokens",
+      "operation": "getFollowTokens",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-getCreatedTokens",
+      "operation": "getCreatedTokens",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-getWalletStats",
+      "operation": "getWalletStats",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-getWalletProfits",
+      "operation": "getWalletProfits",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 1
+      }
+    },
+    {
+      "id": "bsc-getWalletTokenBalance",
+      "operation": "getWalletTokenBalance",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-getTrenches",
+      "operation": "getTrenches",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-getTokenSignalV2",
+      "operation": "getTokenSignalV2",
+      "chain": "bsc",
+      "status": "not-run",
+      "reason": "deprecated-alias-tested-offline",
+      "recorded": false
+    },
+    {
+      "id": "bsc-getTokenSignals",
+      "operation": "getTokenSignals",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 50
+      }
+    },
+    {
+      "id": "bsc-getHotSearches",
+      "operation": "getHotSearches",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 1
+      }
+    },
+    {
+      "id": "bsc-searchMarket",
+      "operation": "searchMarket",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-getFollowWallet",
+      "operation": "getFollowWallet",
+      "chain": "bsc",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "bsc-getFollowGroupNames",
+      "operation": "getFollowGroupNames",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 1
+      }
+    },
+    {
+      "id": "bsc-getSmartMoney",
+      "operation": "getSmartMoney",
+      "chain": "bsc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "bsc-quoteOrder",
+      "operation": "quoteOrder",
+      "chain": "bsc",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "bsc-queryOrder",
+      "operation": "queryOrder",
+      "chain": "bsc",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "bsc-getGasPrice",
+      "operation": "getGasPrice",
+      "chain": "bsc",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "bsc-getStrategyOrders",
+      "operation": "getStrategyOrders",
+      "chain": "bsc",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "bsc-swap",
+      "operation": "swap",
+      "chain": "bsc",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "bsc-multiSwap",
+      "operation": "multiSwap",
+      "chain": "bsc",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "bsc-createStrategyOrder",
+      "operation": "createStrategyOrder",
+      "chain": "bsc",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "bsc-cancelStrategyOrder",
+      "operation": "cancelStrategyOrder",
+      "chain": "bsc",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "bsc-createToken",
+      "operation": "createToken",
+      "chain": "bsc",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "bsc-kol-limit1",
+      "operation": "getKol",
+      "chain": "bsc",
+      "variant": "limit-1",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 1
+      }
+    },
+    {
+      "id": "bsc-stats-batch30d",
+      "operation": "getWalletStats",
+      "chain": "bsc",
+      "variant": "batch-2-30d",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-rank24h",
+      "operation": "getTrendingSwaps",
+      "chain": "bsc",
+      "variant": "24h",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "base-getKol",
+      "operation": "getKol",
+      "chain": "base",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "base-getTrendingSwaps",
+      "operation": "getTrendingSwaps",
+      "chain": "base",
+      "variant": "1h-limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "base-getTokenInfo",
+      "operation": "getTokenInfo",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "base-getTokenSecurity",
+      "operation": "getTokenSecurity",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "base-getTokenPoolInfo",
+      "operation": "getTokenPoolInfo",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "base-getTokenTopHolders",
+      "operation": "getTokenTopHolders",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "base-getTokenTopTraders",
+      "operation": "getTokenTopTraders",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "base-getTokenKline",
+      "operation": "getTokenKline",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 0
+      }
+    },
+    {
+      "id": "base-getWalletHoldings",
+      "operation": "getWalletHoldings",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "base-getWalletActivity",
+      "operation": "getWalletActivity",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "base-getFollowTokens",
+      "operation": "getFollowTokens",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "base-getCreatedTokens",
+      "operation": "getCreatedTokens",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "base-getWalletStats",
+      "operation": "getWalletStats",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "base-getWalletProfits",
+      "operation": "getWalletProfits",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 1
+      }
+    },
+    {
+      "id": "base-getWalletTokenBalance",
+      "operation": "getWalletTokenBalance",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "base-getTrenches",
+      "operation": "getTrenches",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "base-getTokenSignalV2",
+      "operation": "getTokenSignalV2",
+      "chain": "base",
+      "status": "not-run",
+      "reason": "deprecated-alias-tested-offline",
+      "recorded": false
+    },
+    {
+      "id": "base-getTokenSignals",
+      "operation": "getTokenSignals",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "failed",
+      "recorded": true,
+      "ok": false,
+      "error": {
+        "kind": "http",
+        "status": 400,
+        "apiCode": 400
+      }
+    },
+    {
+      "id": "base-getHotSearches",
+      "operation": "getHotSearches",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 1
+      }
+    },
+    {
+      "id": "base-searchMarket",
+      "operation": "searchMarket",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "base-getFollowWallet",
+      "operation": "getFollowWallet",
+      "chain": "base",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "base-getFollowGroupNames",
+      "operation": "getFollowGroupNames",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 1
+      }
+    },
+    {
+      "id": "base-getSmartMoney",
+      "operation": "getSmartMoney",
+      "chain": "base",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "base-quoteOrder",
+      "operation": "quoteOrder",
+      "chain": "base",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "base-queryOrder",
+      "operation": "queryOrder",
+      "chain": "base",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "base-getGasPrice",
+      "operation": "getGasPrice",
+      "chain": "base",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "base-getStrategyOrders",
+      "operation": "getStrategyOrders",
+      "chain": "base",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "base-swap",
+      "operation": "swap",
+      "chain": "base",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "base-multiSwap",
+      "operation": "multiSwap",
+      "chain": "base",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "base-createStrategyOrder",
+      "operation": "createStrategyOrder",
+      "chain": "base",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "base-cancelStrategyOrder",
+      "operation": "cancelStrategyOrder",
+      "chain": "base",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "base-createToken",
+      "operation": "createToken",
+      "chain": "base",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "eth-getKol",
+      "operation": "getKol",
+      "chain": "eth",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "eth-getTrendingSwaps",
+      "operation": "getTrendingSwaps",
+      "chain": "eth",
+      "variant": "1h-limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "eth-getTokenInfo",
+      "operation": "getTokenInfo",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "eth-getTokenSecurity",
+      "operation": "getTokenSecurity",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "eth-getTokenPoolInfo",
+      "operation": "getTokenPoolInfo",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "eth-getTokenTopHolders",
+      "operation": "getTokenTopHolders",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "eth-getTokenTopTraders",
+      "operation": "getTokenTopTraders",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "eth-getTokenKline",
+      "operation": "getTokenKline",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 0
+      }
+    },
+    {
+      "id": "eth-getWalletHoldings",
+      "operation": "getWalletHoldings",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "eth-getWalletActivity",
+      "operation": "getWalletActivity",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "eth-getFollowTokens",
+      "operation": "getFollowTokens",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "eth-getCreatedTokens",
+      "operation": "getCreatedTokens",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "eth-getWalletStats",
+      "operation": "getWalletStats",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "eth-getWalletProfits",
+      "operation": "getWalletProfits",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 1
+      }
+    },
+    {
+      "id": "eth-getWalletTokenBalance",
+      "operation": "getWalletTokenBalance",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "eth-getTrenches",
+      "operation": "getTrenches",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "eth-getTokenSignalV2",
+      "operation": "getTokenSignalV2",
+      "chain": "eth",
+      "status": "not-run",
+      "reason": "deprecated-alias-tested-offline",
+      "recorded": false
+    },
+    {
+      "id": "eth-getTokenSignals",
+      "operation": "getTokenSignals",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "failed",
+      "recorded": true,
+      "ok": false,
+      "error": {
+        "kind": "http",
+        "status": 400,
+        "apiCode": 400
+      }
+    },
+    {
+      "id": "eth-getHotSearches",
+      "operation": "getHotSearches",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 1
+      }
+    },
+    {
+      "id": "eth-searchMarket",
+      "operation": "searchMarket",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "eth-getFollowWallet",
+      "operation": "getFollowWallet",
+      "chain": "eth",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "eth-getFollowGroupNames",
+      "operation": "getFollowGroupNames",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 1
+      }
+    },
+    {
+      "id": "eth-getSmartMoney",
+      "operation": "getSmartMoney",
+      "chain": "eth",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "eth-quoteOrder",
+      "operation": "quoteOrder",
+      "chain": "eth",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "eth-queryOrder",
+      "operation": "queryOrder",
+      "chain": "eth",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "eth-getGasPrice",
+      "operation": "getGasPrice",
+      "chain": "eth",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "eth-getStrategyOrders",
+      "operation": "getStrategyOrders",
+      "chain": "eth",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "eth-swap",
+      "operation": "swap",
+      "chain": "eth",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "eth-multiSwap",
+      "operation": "multiSwap",
+      "chain": "eth",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "eth-createStrategyOrder",
+      "operation": "createStrategyOrder",
+      "chain": "eth",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "eth-cancelStrategyOrder",
+      "operation": "cancelStrategyOrder",
+      "chain": "eth",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "eth-createToken",
+      "operation": "createToken",
+      "chain": "eth",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "robinhood-getKol",
+      "operation": "getKol",
+      "chain": "robinhood",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "robinhood-getTrendingSwaps",
+      "operation": "getTrendingSwaps",
+      "chain": "robinhood",
+      "variant": "1h-limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getTokenInfo",
+      "operation": "getTokenInfo",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getTokenSecurity",
+      "operation": "getTokenSecurity",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getTokenPoolInfo",
+      "operation": "getTokenPoolInfo",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getTokenTopHolders",
+      "operation": "getTokenTopHolders",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "robinhood-getTokenTopTraders",
+      "operation": "getTokenTopTraders",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "robinhood-getTokenKline",
+      "operation": "getTokenKline",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 0
+      }
+    },
+    {
+      "id": "robinhood-getWalletHoldings",
+      "operation": "getWalletHoldings",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "robinhood-getWalletActivity",
+      "operation": "getWalletActivity",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getFollowTokens",
+      "operation": "getFollowTokens",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getCreatedTokens",
+      "operation": "getCreatedTokens",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getWalletStats",
+      "operation": "getWalletStats",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getWalletProfits",
+      "operation": "getWalletProfits",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 1
+      }
+    },
+    {
+      "id": "robinhood-getWalletTokenBalance",
+      "operation": "getWalletTokenBalance",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getTrenches",
+      "operation": "getTrenches",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getTokenSignals",
+      "operation": "getTokenSignals",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 0
+      }
+    },
+    {
+      "id": "robinhood-getHotSearches",
+      "operation": "getHotSearches",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "failed",
+      "recorded": false,
+      "ok": false,
+      "error": {
+        "kind": "network"
+      }
+    },
+    {
+      "id": "robinhood-searchMarket",
+      "operation": "searchMarket",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "failed",
+      "recorded": false,
+      "ok": false,
+      "error": {
+        "kind": "network"
+      }
+    },
+    {
+      "id": "robinhood-getFollowGroupNames",
+      "operation": "getFollowGroupNames",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "failed",
+      "recorded": false,
+      "ok": false,
+      "error": {
+        "kind": "network"
+      }
+    },
+    {
+      "id": "robinhood-getSmartMoney",
+      "operation": "getSmartMoney",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "failed",
+      "recorded": false,
+      "ok": false,
+      "error": {
+        "kind": "network"
+      }
+    },
+    {
+      "id": "robinhood-kol-limit1",
+      "operation": "getKol",
+      "chain": "robinhood",
+      "variant": "limit-1",
+      "status": "failed",
+      "recorded": false,
+      "ok": false,
+      "error": {
+        "kind": "network"
+      }
+    },
+    {
+      "id": "robinhood-stats-batch30d",
+      "operation": "getWalletStats",
+      "chain": "robinhood",
+      "variant": "batch-2-30d",
+      "status": "failed",
+      "recorded": false,
+      "ok": false,
+      "error": {
+        "kind": "network"
+      }
+    },
+    {
+      "id": "robinhood-rank24h",
+      "operation": "getTrendingSwaps",
+      "chain": "robinhood",
+      "variant": "24h",
+      "status": "failed",
+      "recorded": false,
+      "ok": false,
+      "error": {
+        "kind": "network"
+      }
+    },
+    {
+      "id": "arc-getKol",
+      "operation": "getKol",
+      "chain": "arc",
+      "variant": "limit-2",
+      "status": "failed",
+      "recorded": false,
+      "ok": false,
+      "error": {
+        "kind": "network"
+      }
+    },
+    {
+      "id": "arc-getTrendingSwaps",
+      "operation": "getTrendingSwaps",
+      "chain": "arc",
+      "variant": "1h-limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "arc-getTokenInfo",
+      "operation": "getTokenInfo",
+      "chain": "arc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "arc-getTokenSecurity",
+      "operation": "getTokenSecurity",
+      "chain": "arc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "arc-getTokenPoolInfo",
+      "operation": "getTokenPoolInfo",
+      "chain": "arc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "arc-getTokenTopHolders",
+      "operation": "getTokenTopHolders",
+      "chain": "arc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "arc-getTokenTopTraders",
+      "operation": "getTokenTopTraders",
+      "chain": "arc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "arc-getTokenKline",
+      "operation": "getTokenKline",
+      "chain": "arc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 0
+      }
+    },
+    {
+      "id": "arc-getTrenches",
+      "operation": "getTrenches",
+      "chain": "arc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getKol-attempt2",
+      "operation": "getKol",
+      "chain": "robinhood",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "robinhood-getTrendingSwaps-attempt2",
+      "operation": "getTrendingSwaps",
+      "chain": "robinhood",
+      "variant": "1h-limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getTokenSignalV2",
+      "operation": "getTokenSignalV2",
+      "chain": "robinhood",
+      "status": "not-run",
+      "reason": "deprecated-alias-tested-offline",
+      "recorded": false
+    },
+    {
+      "id": "robinhood-getHotSearches-attempt2",
+      "operation": "getHotSearches",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 1
+      }
+    },
+    {
+      "id": "robinhood-searchMarket-attempt2",
+      "operation": "searchMarket",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "robinhood-getFollowWallet",
+      "operation": "getFollowWallet",
+      "chain": "robinhood",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "robinhood-getFollowGroupNames-attempt2",
+      "operation": "getFollowGroupNames",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 1
+      }
+    },
+    {
+      "id": "robinhood-getSmartMoney-attempt2",
+      "operation": "getSmartMoney",
+      "chain": "robinhood",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "robinhood-quoteOrder",
+      "operation": "quoteOrder",
+      "chain": "robinhood",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "robinhood-queryOrder",
+      "operation": "queryOrder",
+      "chain": "robinhood",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "robinhood-getGasPrice",
+      "operation": "getGasPrice",
+      "chain": "robinhood",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "robinhood-getStrategyOrders",
+      "operation": "getStrategyOrders",
+      "chain": "robinhood",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "robinhood-swap",
+      "operation": "swap",
+      "chain": "robinhood",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "robinhood-multiSwap",
+      "operation": "multiSwap",
+      "chain": "robinhood",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "robinhood-createStrategyOrder",
+      "operation": "createStrategyOrder",
+      "chain": "robinhood",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "robinhood-cancelStrategyOrder",
+      "operation": "cancelStrategyOrder",
+      "chain": "robinhood",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "robinhood-createToken",
+      "operation": "createToken",
+      "chain": "robinhood",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "robinhood-kol-limit1-attempt2",
+      "operation": "getKol",
+      "chain": "robinhood",
+      "variant": "limit-1",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 1
+      }
+    },
+    {
+      "id": "robinhood-rank24h-attempt2",
+      "operation": "getTrendingSwaps",
+      "chain": "robinhood",
+      "variant": "24h",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "arc-getKol-attempt2",
+      "operation": "getKol",
+      "chain": "arc",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "arc-getTrendingSwaps-attempt2",
+      "operation": "getTrendingSwaps",
+      "chain": "arc",
+      "variant": "1h-limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "arc-getWalletHoldings",
+      "operation": "getWalletHoldings",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "arc-getWalletActivity",
+      "operation": "getWalletActivity",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "arc-getFollowTokens",
+      "operation": "getFollowTokens",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "arc-getCreatedTokens",
+      "operation": "getCreatedTokens",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "arc-getWalletStats",
+      "operation": "getWalletStats",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "arc-getWalletProfits",
+      "operation": "getWalletProfits",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "arc-getWalletTokenBalance",
+      "operation": "getWalletTokenBalance",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "arc-getTokenSignalV2",
+      "operation": "getTokenSignalV2",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "deprecated-alias-tested-offline",
+      "recorded": false
+    },
+    {
+      "id": "arc-getTokenSignals",
+      "operation": "getTokenSignals",
+      "chain": "arc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 0
+      }
+    },
+    {
+      "id": "arc-getHotSearches",
+      "operation": "getHotSearches",
+      "chain": "arc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 1
+      }
+    },
+    {
+      "id": "arc-searchMarket",
+      "operation": "searchMarket",
+      "chain": "arc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "arc-getFollowWallet",
+      "operation": "getFollowWallet",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "arc-getFollowGroupNames",
+      "operation": "getFollowGroupNames",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "arc-getSmartMoney",
+      "operation": "getSmartMoney",
+      "chain": "arc",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "arc-quoteOrder",
+      "operation": "quoteOrder",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "arc-queryOrder",
+      "operation": "queryOrder",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "arc-getGasPrice",
+      "operation": "getGasPrice",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "arc-getStrategyOrders",
+      "operation": "getStrategyOrders",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "arc-swap",
+      "operation": "swap",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "arc-multiSwap",
+      "operation": "multiSwap",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "arc-createStrategyOrder",
+      "operation": "createStrategyOrder",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "arc-cancelStrategyOrder",
+      "operation": "cancelStrategyOrder",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "arc-createToken",
+      "operation": "createToken",
+      "chain": "arc",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "stable-getKol",
+      "operation": "getKol",
+      "chain": "stable",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "stable-getTrendingSwaps",
+      "operation": "getTrendingSwaps",
+      "chain": "stable",
+      "variant": "1h-limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "stable-getTokenInfo",
+      "operation": "getTokenInfo",
+      "chain": "stable",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "stable-getTokenSecurity",
+      "operation": "getTokenSecurity",
+      "chain": "stable",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "stable-getTokenPoolInfo",
+      "operation": "getTokenPoolInfo",
+      "chain": "stable",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "stable-getTokenTopHolders",
+      "operation": "getTokenTopHolders",
+      "chain": "stable",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "stable-getTokenTopTraders",
+      "operation": "getTokenTopTraders",
+      "chain": "stable",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "stable-getTokenKline",
+      "operation": "getTokenKline",
+      "chain": "stable",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 0
+      }
+    },
+    {
+      "id": "stable-getWalletHoldings",
+      "operation": "getWalletHoldings",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "stable-getWalletActivity",
+      "operation": "getWalletActivity",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "stable-getFollowTokens",
+      "operation": "getFollowTokens",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "stable-getCreatedTokens",
+      "operation": "getCreatedTokens",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "stable-getWalletStats",
+      "operation": "getWalletStats",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "stable-getWalletProfits",
+      "operation": "getWalletProfits",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "stable-getWalletTokenBalance",
+      "operation": "getWalletTokenBalance",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "stable-getTrenches",
+      "operation": "getTrenches",
+      "chain": "stable",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "stable-getTokenSignalV2",
+      "operation": "getTokenSignalV2",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "deprecated-alias-tested-offline",
+      "recorded": false
+    },
+    {
+      "id": "stable-getTokenSignals",
+      "operation": "getTokenSignals",
+      "chain": "stable",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 0
+      }
+    },
+    {
+      "id": "stable-getHotSearches",
+      "operation": "getHotSearches",
+      "chain": "stable",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 1
+      }
+    },
+    {
+      "id": "stable-searchMarket",
+      "operation": "searchMarket",
+      "chain": "stable",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "stable-getFollowWallet",
+      "operation": "getFollowWallet",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "stable-getFollowGroupNames",
+      "operation": "getFollowGroupNames",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "no-discovered-chain-input",
+      "recorded": false
+    },
+    {
+      "id": "stable-getSmartMoney",
+      "operation": "getSmartMoney",
+      "chain": "stable",
+      "variant": "small-read",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "stable-quoteOrder",
+      "operation": "quoteOrder",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "stable-queryOrder",
+      "operation": "queryOrder",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "stable-getGasPrice",
+      "operation": "getGasPrice",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "stable-getStrategyOrders",
+      "operation": "getStrategyOrders",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "trade-route-family-rate-gated; not-probed-further",
+      "recorded": false
+    },
+    {
+      "id": "stable-swap",
+      "operation": "swap",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "stable-multiSwap",
+      "operation": "multiSwap",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "stable-createStrategyOrder",
+      "operation": "createStrategyOrder",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "stable-cancelStrategyOrder",
+      "operation": "cancelStrategyOrder",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "stable-createToken",
+      "operation": "createToken",
+      "chain": "stable",
+      "status": "not-run",
+      "reason": "financial-write-synthetic-only",
+      "recorded": false
+    },
+    {
+      "id": "sol-kol-batch-discovery",
+      "operation": "getKol",
+      "chain": "sol",
+      "variant": "limit-20",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 20
+      }
+    },
+    {
+      "id": "sol-smartmoney-batch-discovery",
+      "operation": "getSmartMoney",
+      "chain": "sol",
+      "variant": "limit-20",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 20
+      }
+    },
+    {
+      "id": "sol-stats-batch30d",
+      "operation": "getWalletStats",
+      "chain": "sol",
+      "variant": "distinct-wallets-2/30d",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "bsc-kol-batch-discovery",
+      "operation": "getKol",
+      "chain": "bsc",
+      "variant": "limit-20",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 20
+      }
+    },
+    {
+      "id": "bsc-smartmoney-batch-discovery",
+      "operation": "getSmartMoney",
+      "chain": "bsc",
+      "variant": "limit-20",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 20
+      }
+    },
+    {
+      "id": "robinhood-kol-batch-discovery",
+      "operation": "getKol",
+      "chain": "robinhood",
+      "variant": "limit-20",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 20
+      }
+    },
+    {
+      "id": "robinhood-smartmoney-batch-discovery",
+      "operation": "getSmartMoney",
+      "chain": "robinhood",
+      "variant": "limit-20",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 20
+      }
+    },
+    {
+      "id": "robinhood-stats-batch30d-attempt2",
+      "operation": "getWalletStats",
+      "chain": "robinhood",
+      "variant": "distinct-wallets-2/30d",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object"
+      }
+    },
+    {
+      "id": "sol-kol-page-discovery",
+      "operation": "getKol",
+      "chain": "sol",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "sol-activity-two-pages",
+      "operation": "getWalletActivity",
+      "chain": "sol",
+      "variant": "activity-two-pages",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 2
+      }
+    },
+    {
+      "id": "bsc-kol-page-discovery",
+      "operation": "getKol",
+      "chain": "bsc",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "bsc-activity-two-pages",
+      "operation": "getWalletActivity",
+      "chain": "bsc",
+      "variant": "activity-two-pages",
+      "status": "failed",
+      "recorded": false,
+      "ok": false,
+      "error": {
+        "kind": "network"
+      },
+      "captureFailure": {
+        "stage": "transport"
+      }
+    },
+    {
+      "id": "robinhood-kol-page-discovery",
+      "operation": "getKol",
+      "chain": "robinhood",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "robinhood-activity-two-pages",
+      "operation": "getWalletActivity",
+      "chain": "robinhood",
+      "variant": "activity-two-pages",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 2
+      }
+    },
+    {
+      "id": "bsc-kol-page-discovery-attempt2",
+      "operation": "getKol",
+      "chain": "bsc",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    },
+    {
+      "id": "bsc-activity-two-pages-attempt2",
+      "operation": "getWalletActivity",
+      "chain": "bsc",
+      "variant": "activity-two-pages",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "array",
+        "rows": 2
+      }
+    },
+    {
+      "id": "robinhood-kol-page-discovery-attempt2",
+      "operation": "getKol",
+      "chain": "robinhood",
+      "variant": "limit-2",
+      "status": "passed",
+      "recorded": true,
+      "ok": true,
+      "summary": {
+        "type": "object",
+        "rows": 2
+      }
+    }
+  ]
+}

@@ -165,7 +165,11 @@ npm run test:smoke
 ```
 
 CI is defined for Node 22/24/26 on Linux and Node 24 on macOS. PR tests use synthetic
-credentials only. The manual release-candidate workflow tests and uploads a tarball
+credentials only, including replay of sanitized live HTTP cassettes.
+See [record/replay development guide](docs/record-replay.md) for explicit recording.
+The [coverage matrix](docs/coverage.md) distinguishes offline wire tests from live
+sample outcomes and unqualified combinations.
+The manual release-candidate workflow tests and uploads a tarball
 with SHA256, **not an npm publication**. Actions are SHA-pinned and read-only.
 Dependabot updates development dependencies and Actions through reviewed PRs.
 Repository branch rules, npm trusted publisher setup and real-secret smoke gates

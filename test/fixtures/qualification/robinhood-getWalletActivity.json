@@ -1,0 +1,53 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getWalletActivity"
+  },
+  "capturedAt": "2026-09-08T13:32:21.495Z",
+  "inputs": {
+    "args": [
+      "robinhood",
+      "0x0000000000000000000000000000000000000001",
+      {
+        "limit": 2
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/wallet_activity",
+        "query": [
+          ["limit", "2"],
+          ["chain", "robinhood"],
+          ["wallet_address", "0x0000000000000000000000000000000000000001"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"activities\":[{\"wallet\":\"0x0000000000000000000000000000000000000001\",\"chain\":\"robinhood\",\"tx_hash\":\"[redacted text]\",\"timestamp\":1788874266,\"event_type\":\"[redacted text]\",\"token\":{\"address\":\"0x0000000000000000000000000000000000000002\",\"symbol\":\"[redacted text]\",\"logo\":\"https://fixture.invalid/redacted\",\"total_supply\":\"1000000000\"},\"token_amount\":\"14791183.655247562\",\"quote_amount\":\"0.07624837078135681\",\"cost_usd\":\"188.1977537299605\",\"buy_cost_usd\":\"206.31823164977345\",\"price_usd\":\"0.000012723643902778017\",\"price\":\"0.000000005154987765587353\",\"is_open_or_close\":1,\"quote_token\":{\"token_address\":\"0x0000000000000000000000000000000000000003\",\"name\":\"[redacted text]\",\"symbol\":\"[redacted text]\",\"decimals\":18,\"logo\":\"https://fixture.invalid/redacted\"},\"quote_address\":\"0x0000000000000000000000000000000000000003\",\"from_address\":\"\",\"to_address\":\"\",\"gas_native\":\"0.00005098287088\",\"gas_usd\":\"0.1258369415634336\",\"dex_native\":\"0.000762483707813568\",\"dex_usd\":\"1.8819775372996048\",\"priority_fee\":\"0\",\"tip_fee\":\"0\",\"launchpad\":\"[redacted text]\",\"launchpad_platform\":\"[redacted text]\"},{\"wallet\":\"0x0000000000000000000000000000000000000001\",\"chain\":\"robinhood\",\"tx_hash\":\"[redacted text]\",\"timestamp\":1788874132,\"event_type\":\"[redacted text]\",\"token\":{\"address\":\"0x0000000000000000000000000000000000000004\",\"symbol\":\"[redacted text]\",\"logo\":\"\",\"total_supply\":\"1000000000\"},\"token_amount\":\"11644454.30393015\",\"quote_amount\":\"80.054307\",\"cost_usd\":\"80.054307\",\"buy_cost_usd\":\"82.49007684335102\",\"price_usd\":\"0.000006874886955671307\",\"price\":\"0.000006874886955671307\",\"is_open_or_close\":1,\"quote_token\":{\"token_address\":\"0x0000000000000000000000000000000000000005\",\"name\":\"[redacted text]\",\"symbol\":\"[redacted text]\",\"decimals\":6,\"logo\":\"https://fixture.invalid/redacted\"},\"quote_address\":\"0x0000000000000000000000000000000000000005\",\"from_address\":\"\",\"to_address\":\"\",\"gas_native\":\"0.000075162273192\",\"gas_usd\":\"0.1856853894299083\",\"dex_native\":\"0.800543\",\"dex_usd\":\"0.800543\",\"priority_fee\":\"0\",\"tip_fee\":\"0\",\"launchpad\":\"[redacted text]\",\"launchpad_platform\":\"[redacted text]\"}],\"next\":\"[redacted text]\"},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object"
+    }
+  }
+}

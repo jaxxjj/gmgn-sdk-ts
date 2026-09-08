@@ -1,0 +1,55 @@
+{
+  "format": "sdk-http-cassette/v1",
+  "service": "gmgn",
+  "provenance": {
+    "kind": "live",
+    "source": "SDK read-only qualification",
+    "operation": "getWalletHoldings"
+  },
+  "capturedAt": "2026-09-08T13:27:24.590Z",
+  "inputs": {
+    "args": [
+      "base",
+      "0x0000000000000000000000000000000000000001",
+      {
+        "limit": 2
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "origin": "https://gmgn.fixture.invalid",
+        "path": "/v1/user/wallet_holdings",
+        "query": [
+          ["limit", "2"],
+          ["chain", "base"],
+          ["wallet_address", "0x0000000000000000000000000000000000000001"],
+          ["timestamp", "<timestamp>"],
+          ["client_id", "<request-id>"]
+        ],
+        "headers": {
+          "authentication": "<present>",
+          "content-type": "application/json",
+          "x-signature": "<present>"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": "{\"code\":0,\"data\":{\"list\":[{\"balance\":\"0\",\"usd_value\":\"0\",\"accu_amount\":\"0\",\"accu_cost\":\"0\",\"accu_fee\":\"0\",\"history_bought_amount\":\"22650491.285870632270633599\",\"history_bought_cost\":\"98.52273486\",\"history_bought_fee\":\"150.061271696861503536\",\"history_transfer_in_amount\":\"0\",\"history_transfer_in_cost\":\"0\",\"history_sold_amount\":\"22650491.285870632270633599\",\"history_sold_income\":\"355.19775474557698978815\",\"history_sold_fee\":\"4.10250237285650154797\",\"history_transfer_out_amount\":\"0\",\"history_transfer_out_income\":\"0\",\"history_transfer_out_fee\":\"0\",\"history_total_buys\":1,\"history_total_sells\":3,\"history_total_transfer_ins\":0,\"history_total_transfer_outs\":0,\"realized_profit\":\"102.51124581585898470418\",\"realized_profit_pnl\":\"0.4056854726833531\",\"unrealized_profit\":\"0\",\"unrealized_profit_pnl\":null,\"total_profit\":\"102.51124581585898470418\",\"total_profit_pnl\":\"0.4056854726833531\",\"start_holding_at\":1788872099,\"end_holding_at\":1788872297,\"last_block\":51041475,\"last_active_timestamp\":1788872297,\"token\":{\"token_address\":\"0x0000000000000000000000000000000000000002\",\"symbol\":\"[redacted text]\",\"name\":\"[redacted text]\",\"decimals\":18,\"logo\":\"https://fixture.invalid/redacted\",\"creation_timestamp\":1788872091,\"open_timestamp\":1788872091,\"is_show_alert\":true,\"is_honeypot\":false,\"price\":\"0\",\"total_supply\":\"1000000000\",\"max_supply\":\"1000000000\",\"liquidity\":\"3628.0134504441444\",\"launchpad\":\"[redacted text]\",\"launchpad_platform\":\"[redacted text]\"},\"wallet_token_tags\":null},{\"balance\":\"185.24\",\"usd_value\":\"0.001223836574356\",\"accu_amount\":\"185.24\",\"accu_cost\":\"0.0159704022252970228\",\"accu_fee\":\"0\",\"history_bought_amount\":\"0\",\"history_bought_cost\":\"0\",\"history_bought_fee\":\"0\",\"history_transfer_in_amount\":\"185.24\",\"history_transfer_in_cost\":\"0.0159704022252970228\",\"history_sold_amount\":\"0\",\"history_sold_income\":\"0\",\"history_sold_fee\":\"0\",\"history_transfer_out_amount\":\"0\",\"history_transfer_out_income\":\"0\",\"history_transfer_out_fee\":\"0\",\"history_total_buys\":0,\"history_total_sells\":0,\"history_total_transfer_ins\":1,\"history_total_transfer_outs\":0,\"realized_profit\":\"0\",\"realized_profit_pnl\":null,\"unrealized_profit\":\"0\",\"unrealized_profit_pnl\":null,\"total_profit\":\"0\",\"total_profit_pnl\":\"0\",\"start_holding_at\":1788838127,\"end_holding_at\":0,\"last_block\":51024390,\"last_active_timestamp\":1788838127,\"token\":{\"token_address\":\"0x0000000000000000000000000000000000000003\",\"symbol\":\"[redacted text]\",\"name\":\"[redacted text]\",\"decimals\":18,\"logo\":\"https://fixture.invalid/redacted\",\"creation_timestamp\":1788833963,\"open_timestamp\":1788833979,\"is_show_alert\":true,\"is_honeypot\":true,\"price\":\"0.0000066067619\",\"total_supply\":\"100000000000\",\"max_supply\":\"100000000000\",\"liquidity\":\"0.342582\",\"launchpad\":\"[redacted text]\",\"launchpad_platform\":\"[redacted text]\"},\"wallet_token_tags\":null}],\"next\":\"[redacted text]\"},\"message\":\"[redacted text]\",\"reason\":\"\"}"
+      }
+    }
+  ],
+  "expected": {
+    "ok": true,
+    "summary": {
+      "type": "object",
+      "rows": 2
+    }
+  }
+}
