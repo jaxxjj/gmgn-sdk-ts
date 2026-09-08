@@ -1,10 +1,12 @@
 /**
  * Node-only SDK entrypoint. No CLI parsing, credential loading, or network setup.
  *
- * The upstream client includes financial writes without the CLI's confirmation
- * prompts. Calling those methods can execute real transactions.
+ * Financial writes require explicit enableTrading configuration.
  */
 export { OpenApiClient, OpenApiClient as GmgnClient } from "./client/OpenApiClient.js";
+export { GmgnError } from "./errors.js";
+export type { ErrorKind, ErrorDetails } from "./errors.js";
+export type { RequestOptions } from "./transport.js";
 export type {
   Config,
   SwapParams,

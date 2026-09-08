@@ -1,8 +1,8 @@
 {
   "name": "@jaxxjj/gmgn-sdk",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Unofficial Node.js TypeScript SDK extracted from the MIT-licensed GMGN client",
+  "description": "Independent unofficial GMGN SDK with bounded transport and safe execution defaults",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -12,14 +12,26 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "LICENSE", "UPSTREAM.md", "README.md"],
-  "engines": {"node": ">=22"},
+  "files": [
+    "dist",
+    "LICENSE",
+    "UPSTREAM.md",
+    "README.md",
+    "CHANGELOG.md",
+    "SECURITY.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "npm run build && node --test test/*.test.mjs",
     "test:smoke": "npm run build && node scripts/smoke.mjs",
-    "test:package": "npm pack && node scripts/check-package.mjs",
+    "test:package": "node scripts/check-package.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run typecheck && npm test && npm run test:package",
     "prepack": "npm run build"
   },
   "license": "MIT",
@@ -29,6 +41,7 @@
   },
   "devDependencies": {
     "@types/node": "22.20.1",
+    "prettier": "3.9.6",
     "typescript": "7.0.2"
   }
 }

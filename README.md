@@ -1,108 +1,149 @@
 # GMGN TypeScript SDK
 
-Unofficial, minimal Node.js SDK extracted from GMGN's MIT-licensed `OpenApiClient`.
-**No CLI process, no automatic credential files, no runtime dependencies.**
+Independent, unofficial, Node.js-only GMGN API SDK. Originally derived from the
+MIT-licensed GMGN CLI; now maintained independently, not byte-identical to upstream.
+Zero runtime dependencies. Node 22+. ESM.
 
-This repository is initially private and the package has `private: true`.
-Nothing has been published to npm. The package name in examples is for local/tarball
-installation, not a claim that it is available in the public registry.
+The repository and package remain private. **Not published to npm.**
 
-## Install locally
+## Install
 
-Requires Node.js 22+.
+In this repository:
 
 ```bash
 npm ci
-npm test
-npm pack
-# In your consumer project:
-npm install /path/to/jaxxjj-gmgn-sdk-0.1.0.tgz
+npm run check
+node scripts/check-package.mjs --artifact
 ```
+
+Then in a consumer project:
+
+```bash
+npm install /path/to/gmgn-sdk-ts/artifacts/jaxxjj-gmgn-sdk-0.2.0.tgz
+```
+
+The artifact is installed and typechecked in a separate consumer before it is
+copied to `artifacts/`. A SHA256 file accompanies it.
 
 ## Read data
 
 ```ts
-import { GmgnClient } from "@jaxxjj/gmgn-sdk";
+import { GmgnClient, GmgnError } from "@jaxxjj/gmgn-sdk";
 
 const apiKey = process.env.GMGN_API_KEY;
 if (!apiKey) throw new Error("Set GMGN_API_KEY");
+const gmgn = new GmgnClient({ apiKey }); // official HTTPS origin by default
 
-const client = new GmgnClient({
-  host: "https://openapi.gmgn.ai",
-  apiKey,
+const kol = await gmgn.getKol("sol", 20);
+const activity = await gmgn.getWalletActivity("sol", walletAddress, {
+  limit: 20,
+  type: ["buy", "sell"],
 });
-
-const kolTrades = await client.getKol("sol", 20);
-const smartMoney = await client.getSmartMoney("bsc", 20);
-const trending = await client.getTrendingSwaps("robinhood", "1h", { limit: 5 });
-
-// address here is the token address, not a pool address.
-const pool = await client.getTokenPoolInfo("sol", tokenAddress);
-const history = await client.getWalletActivity("sol", walletAddress, { limit: 20 });
+const pool = await gmgn.getTokenPoolInfo("sol", tokenAddress);
 ```
 
-Methods retain upstream names. `OpenApiClient` and `GmgnClient` are the same class.
-Successful calls return the API envelope's `data`. Treat it as `unknown` and validate
-the endpoint-specific shape before using it; don't replace absent amounts with zero.
+`OpenApiClient` remains an alias of `GmgnClient` for migration.
+Responses return the successful envelope's `data`, currently **unknown**.
+Validate endpoint-specific fields before using them. Null stays null; decimal
+strings stay strings. JSON numeric literals still have JavaScript number precision.
+Do not cast unchecked data to a made-up response schema.
 
-## Included API groups
+## Cancellation and deadlines
 
-| Group | Example methods |
-|---|---|
-| Tokens | `getTokenInfo`, `getTokenSecurity`, `getTokenPoolInfo`, `getTokenTopHolders`, `getTokenTopTraders` |
-| Market | `getTokenKline`, `getTrendingSwaps`, `getTokenSignalV2`, `getHotSearches`, `getTrenches`, `searchMarket` |
-| Wallets | `getWalletActivity`, `getWalletStats`, `getWalletProfits`, `getWalletTokenBalance`, `getCreatedTokens` |
-| Tracking | `getKol`, `getSmartMoney`, `getFollowTokens`, `getFollowWallet` |
-| Signed reads/writes | Retained from upstream; read the warning below |
+```ts
+const controller = new AbortController();
+const request = gmgn
+  .withOptions({
+    signal: controller.signal,
+    timeoutMs: 5_000,
+  })
+  .getKol("sol", 20);
 
-Use generated declarations in `dist/client/OpenApiClient.d.ts` for exact signatures.
-Backend support differs by endpoint and chain; accepting a chain string is not proof
-every operation is supported there.
+controller.abort();
+try {
+  await request;
+} catch (error) {
+  if (error instanceof GmgnError && error.kind === "aborted") {
+    // Expected caller cancellation.
+  } else {
+    throw error;
+  }
+}
+```
 
-## Important safety warning
+`withOptions` creates an immutable request scope; it never mutates the shared client.
+Its only overrides are `signal` and `timeoutMs`, not credentials or trading access.
+Default total deadline: 15s, including fetch, body consumption and retry waits.
+The SDK doesn't discover credentials, read environment variables, configure global
+network dispatchers, or log on its own.
 
-**This is a direct API client, not a trading safety layer.**
-The copied class also contains trading and token-creation methods.
-Those methods **do not include the CLI's user-confirmation prompts**.
+## Transport policy
 
-For data collection, inject only a server-authorized read-only API key and omit
-`privateKeyPem`. Some reads (including holdings/followed-wallet activity) require a
-signature, so don't interpret omission of a key as universal access to all read APIs.
-Use a separate explicitly approved execution component if you later need signed writes.
+| Option             | Default               | Meaning                                                            |
+| ------------------ | --------------------- | ------------------------------------------------------------------ |
+| `maxRetries`       | 2                     | Additional attempts for safe reads, at most 5                      |
+| `maxRetryDelayMs`  | 5000                  | Upper bound on a retry wait; longer cooldowns fail immediately     |
+| `maxResponseBytes` | 8 MiB                 | Decoded body size limit                                            |
+| `enableTrading`    | false                 | Explicit execution opt-in                                          |
+| `host`             | official HTTPS origin | Trusted credential destination                                     |
+| `fetch`            | native fetch          | Injection for adapters/tests; must honor signal/redirect semantics |
 
-Never pass an untrusted `host` with real credentials or enable debug logs in a secret-bearing
-production environment without auditing log redaction. This extraction intentionally retains
-upstream transport/retry limitations rather than pretending to be a hardened new implementation.
+All redirects are rejected. Custom hosts must be HTTPS origins without paths,
+credentials, fragments or query strings. HTTP is allowed only for literal loopback
+addresses with explicit `allowInsecureLocalhost: true`.
 
-The SDK does not alter the global fetch/dispatcher, load `.env`, launch browsers, query Keychain,
-start timers or send requests simply because it was imported.
-Applications own network timeouts/proxies, concurrency budgets, durable cursors and data storage.
+Safe reads retry network errors, HTTP 429 and 502/503/504 with bounded exponential
+backoff/jitter. `Retry-After` and `x-ratelimit-reset` are respected, never shortened
+to fit the wait budget. Business-error blocks, auth failures and financial writes
+are not retried. Read-only POST routes are explicitly classified.
+Each attempt receives fresh auth timestamp/request ID/signature.
 
-**Known upstream bug reproduced by tests:** 429 response errors bypass the intended retry
-because asynchronous response parsing is returned without `await` inside the retry try/catch.
-This byte-identical extraction retains that defect. Do not rely on automatic retries; rate-limit
-errors propagate to the caller. Any fix should be an explicit, tested vendor patch.
+There is no shared-account/distributed rate limiter: collectors must coordinate
+concurrency and quotas across processes. Retrying is not a substitute for this.
 
-See [UPSTREAM.md](UPSTREAM.md) for provenance and known limitations.
+## Errors and execution
 
-## Development
+`GmgnError` exposes `kind`, `status`, numeric `apiCode`, `retryAfterMs`, and
+`outcomeUnknown`. Messages contain no upstream body, API key, signature or raw
+network cause. Error kinds: configuration, authentication, http, api, protocol,
+network, timeout, aborted, execution_disabled.
+
+Signed reads require an explicitly supplied `privateKeyPem`; that **does not**
+enable trading. Financial writes require `enableTrading: true` as well.
+This prevents accidental calls, not malicious code with your credentials. Use
+separate processes/credentials and external approval for real execution.
+
+No financial write is automatically retried. `outcomeUnknown: true` means a write
+may have reached the server but its outcome is not confirmed. Reconcile using
+provider order/transaction records; **do not blindly resubmit**. False is not a
+universal guarantee of no side effects after an HTTP/business failure.
+
+## API scope
+
+Token information/security/pools/holders/traders; market candles/ranks/signals/search;
+wallet activity/stats/profits/balances/holdings; KOL/smart-money/follows; quote/gas;
+explicitly gated swaps/strategies/token creation.
+See declarations for exact signatures. Chain acceptance in a method signature is
+not proof of service support for that endpoint/chain.
+
+This library is not a lossless event feed, wallet-monitor database, PnL engine or
+trading strategy. Pagination cursors are passed through; no invented pagination
+schema or automatic infinite polling.
+
+## Development and release
 
 ```bash
-npm ci
-npm run typecheck
-npm test
-npm pack --dry-run
+npm run check
+# Optional, explicit live read access; inject credentials without shell history:
+npm run test:smoke
 ```
 
-Tests use local/mocked HTTP and ephemeral signing keys. No account credentials or live
-transactions are involved. To explicitly test read access:
+CI is defined for Node 22/24/26 on Linux and Node 24 on macOS. PR tests use synthetic
+credentials only. The manual release-candidate workflow tests and uploads a tarball
+with SHA256, **not an npm publication**. Actions are SHA-pinned and read-only.
+Dependabot updates development dependencies and Actions through reviewed PRs.
+Repository branch rules, npm trusted publisher setup and real-secret smoke gates
+are administrative release prerequisites, not enabled by these files alone.
 
-```bash
-GMGN_API_KEY=... npm run test:smoke
-```
-
-Prefer injecting the key from a secret manager rather than putting it in shell history.
-The smoke script calls KOL data once for each of `sol`, `bsc`, `robinhood`, sequentially.
-It prints only chain/count metadata, never the key or raw wallet data.
-
-This is an API integration library, not a PnL engine, lossless event feed, or trading strategy.
+See [UPSTREAM.md](UPSTREAM.md), [CHANGELOG.md](CHANGELOG.md) and
+[SECURITY.md](SECURITY.md).

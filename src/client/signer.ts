@@ -1,6 +1,4 @@
-import * as crypto from "crypto";
-import * as fs from "fs";
-import * as path from "path";
+import * as crypto from "node:crypto";
 
 export type SignAlgorithm = "Ed25519" | "RSA-SHA256";
 
@@ -10,8 +8,10 @@ export type SignAlgorithm = "Ed25519" | "RSA-SHA256";
 export function detectAlgorithm(pem: string): SignAlgorithm {
   const key = crypto.createPrivateKey(pem);
   switch (key.asymmetricKeyType) {
-    case "ed25519": return "Ed25519";
-    case "rsa":     return "RSA-SHA256";
+    case "ed25519":
+      return "Ed25519";
+    case "rsa":
+      return "RSA-SHA256";
     default:
       throw new Error(`Unsupported key type: ${key.asymmetricKeyType}. Supported: Ed25519, RSA`);
   }
@@ -39,7 +39,7 @@ export function buildMessage(
   subPath: string,
   queryParams: Record<string, string | number | string[]>,
   body: string,
-  timestamp: number
+  timestamp: number,
 ): string {
   const sortedQs = Object.keys(queryParams)
     .sort()
@@ -56,24 +56,12 @@ export function buildMessage(
 }
 
 /**
- * Load private key file (PEM format)
- */
-export function loadPrivateKey(keyPath: string): string {
-  const resolved = path.resolve(process.cwd(), keyPath);
-  return fs.readFileSync(resolved, "utf-8");
-}
-
-/**
  * Sign a message and return the base64-encoded signature
  *
  * Ed25519: signs raw message bytes (no hashing)
  * RSA-SHA256: RSA-PSS + SHA256, salt length = 32 (matches server-side rsa.VerifyPSS nil opts)
  */
-export function sign(
-  message: string,
-  privateKeyPem: string,
-  algorithm: SignAlgorithm
-): string {
+export function sign(message: string, privateKeyPem: string, algorithm: SignAlgorithm): string {
   const msgBuf = Buffer.from(message, "utf-8");
 
   if (algorithm === "Ed25519") {

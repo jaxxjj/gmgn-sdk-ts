@@ -3,7 +3,7 @@ import { GmgnClient } from "../dist/index.js";
 const apiKey = process.env.GMGN_API_KEY;
 if (!apiKey) throw new Error("Explicit GMGN_API_KEY is required");
 const client = new GmgnClient({ host: "https://openapi.gmgn.ai", apiKey });
-// The upstream transport has no timeout option; cap this optional process as a whole.
+// Bound the entire multi-chain probe as well as individual SDK requests.
 const deadline = setTimeout(() => {
   console.error("Read-only smoke test deadline exceeded");
   process.exit(1);
@@ -15,7 +15,7 @@ try {
       throw new Error("Unexpected KOL response shape");
     }
     console.log(JSON.stringify({ chain, rows: data.list.length, success: true }));
-    await new Promise(resolve => setTimeout(resolve, 1_100));
+    await new Promise((resolve) => setTimeout(resolve, 1_100));
   }
 } catch {
   // Upstream error strings may contain response bodies. Don't leak them here.

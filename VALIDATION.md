@@ -1,37 +1,29 @@
 # Validation — 2026-09-08
 
-This SDK is a byte-identical extraction, not a new transport implementation.
+Version 0.2.0 is an independent implementation. The 0.1.0 byte-identity test is
+intentionally removed; compatibility is assessed through protocol and behavior
+tests rather than preserving upstream implementation defects.
 
-## Local checks
+Local validation includes protocol mappings/signatures, safe-read retries,
+immutable cancellation scopes, fetch/body deadlines, bounded response size,
+HTTP/envelope precedence, native cross-origin redirect rejection, credential-safe
+errors, execution opt-in and ambiguous write outcomes. Package validation installs
+the exact newly packed version in a separate consumer and checks declarations.
 
-- 17 tests: import-side-effect boundary, REST paths/authentication, repeated query
-  parameters, cursor preservation, decimal strings, business/non-JSON/auth errors,
-  request IDs, signed reads, no retries for signed writes, and source hashes.
-- TypeScript compilation and strict exported-API typecheck.
-- npm tarball content check; no credentials, tests, node_modules or CLI entrypoint.
-- Clean consumer project import and declaration resolution from the tarball.
-- Core client/signer compared byte-for-byte with pinned upstream files.
+66 tests passed on Node 22.23.2 and the local Node 23.7.0 runtime. The inventory
+covers all 33 endpoint methods. Formatting, strict TypeScript checks and isolated
+tarball installation/declaration checks passed on Node 22.23.2. This does not
+claim that the configured Node 24/26 GitHub matrix has executed yet.
 
-The tests deliberately characterize a reproduced upstream 429 retry defect, rather
-than claiming retry works. See UPSTREAM.md.
+CI definitions and manual release-candidate artifact workflows are repository
+files. Their presence does not establish a completed GitHub Actions run, branch
+protection, trusted publication or production readiness.
 
-## Bounded live checks
+The rewritten 0.2.0 transport was directly live-tested with `getKol(chain, 2)`:
+sol, bsc and robinhood each succeeded with two rows. The launcher injected only
+the pre-existing API key; no private key was loaded. No live trade is part of
+this validation. All execution tests use synthetic keys and local/mocked requests.
 
-Using only an explicitly injected existing API key, called the extracted client's
-`getKol(chain, 2)` sequentially for:
-
-| Chain | Result |
-|---|---|
-| sol | success, 2 rows |
-| bsc | success, 2 rows |
-| robinhood | success, 2 rows |
-
-No CLI subprocess, signed request, trade, token creation, profile/follow changes,
-or third-party notification was used in these live checks.
-The local smoke launcher read the pre-existing credential file only to inject the
-API key; the SDK itself has no credential discovery. No secrets were persisted.
-
-Other endpoint/chain combinations were not live-tested. Signature tests use fresh
-ephemeral keys and localhost only. Mocked success does not establish server support.
-No browser, proxy, long-duration rate-limit, retry recovery, PnL or production
-security certification is implied.
+Remaining gates: broader read-only contract probes, high-frequency endpoint
+response schemas based on verified contracts, long-running collector integration,
+release administration and any separately authorized trading qualification.
