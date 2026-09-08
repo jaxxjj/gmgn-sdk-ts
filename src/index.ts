@@ -3,12 +3,11 @@
  *
  * Financial writes require explicit enableTrading configuration.
  */
-export { OpenApiClient, OpenApiClient as GmgnClient } from "./client/OpenApiClient.js";
+export { GmgnClient, GmgnClient as OpenApiClient } from "./client.js";
 export { GmgnError } from "./errors.js";
 export type { ErrorKind, ErrorDetails } from "./errors.js";
-export type { RequestOptions } from "./transport.js";
+export type { RequestOptions, GmgnClientOptions, Config } from "./options.js";
 export type {
-  Config,
   SwapParams,
   StrategyConditionOrder,
   MultiSwapParams,
@@ -16,6 +15,7 @@ export type {
   StrategyCancelParams,
   TokenSignalGroup,
   HotSearchesParam,
+  HotSearchParams,
   PumpFeeShareInfo,
   BAGSFeeShareInfo,
   FlapRateConf,
@@ -24,4 +24,5 @@ export type {
   TradeParam,
   CookingSellConfig,
   CreateTokenParams,
-} from "./client/OpenApiClient.js";
+} from "./contracts/parameters.js";
+export type { GetTrenchesParams, TrenchesSection } from "./endpoints/trenches.js";

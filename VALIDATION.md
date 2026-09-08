@@ -1,5 +1,10 @@
 # Validation — 2026-09-08
 
+Architecture follow-up: 72 tests passed locally, including trenches overwrite
+regressions, canonical naming, pre-send failures and diagnostic metadata.
+The follow-up was not live-probed; earlier live results below apply to the
+previous implementation. Endpoint-specific response models remain unverified.
+
 Version 0.2.0 is an independent implementation. The 0.1.0 byte-identity test is
 intentionally removed; compatibility is assessed through protocol and behavior
 tests rather than preserving upstream implementation defects.

@@ -42,7 +42,23 @@ const activity = await gmgn.getWalletActivity("sol", walletAddress, {
 const pool = await gmgn.getTokenPoolInfo("sol", tokenAddress);
 ```
 
-`OpenApiClient` remains an alias of `GmgnClient` for migration.
+`GmgnClient` is the canonical class; `OpenApiClient` remains a compatibility alias.
+Use `GmgnClientOptions`, `HotSearchParams` and `getTokenSignals`; the older
+`Config`, `HotSearchesParam` and `getTokenSignalV2` names remain compatible.
+
+Prefer the object parameter API for trenches:
+
+```ts
+await gmgn.getTrenches({
+  chain: "sol",
+  types: ["completed"],
+  limit: 20,
+  filters: { min_mc: 10_000 },
+});
+```
+
+Unknown section names and filters that override reserved protocol fields are
+rejected before sending. The old positional overload remains supported.
 Responses return the successful envelope's `data`, currently **unknown**.
 Validate endpoint-specific fields before using them. Null stays null; decimal
 strings stay strings. JSON numeric literals still have JavaScript number precision.
@@ -103,8 +119,12 @@ concurrency and quotas across processes. Retrying is not a substitute for this.
 
 ## Errors and execution
 
-`GmgnError` exposes `kind`, `status`, numeric `apiCode`, `retryAfterMs`, and
-`outcomeUnknown`. Messages contain no upstream body, API key, signature or raw
+`GmgnError` exposes `kind`, `status`, numeric `apiCode`, `retryAfterMs`,
+`operation`, `attempt`, `reason`, and `outcomeUnknown`. Attempts are one-based
+for request preparation and sending; failures before the first attempt use zero.
+Reasons distinguish invalid envelopes, oversized responses, request preparation
+and invalid parameters without including raw input.
+Messages contain no upstream body, API key, signature or raw
 network cause. Error kinds: configuration, authentication, http, api, protocol,
 network, timeout, aborted, execution_disabled.
 
@@ -113,7 +133,9 @@ enable trading. Financial writes require `enableTrading: true` as well.
 This prevents accidental calls, not malicious code with your credentials. Use
 separate processes/credentials and external approval for real execution.
 
-No financial write is automatically retried. `outcomeUnknown: true` means a write
+No financial write is automatically retried. After submission, any failure is
+conservatively marked unknown, including HTTP/business rejection responses.
+`outcomeUnknown: true` means a write
 may have reached the server but its outcome is not confirmed. Reconcile using
 provider order/transaction records; **do not blindly resubmit**. False is not a
 universal guarantee of no side effects after an HTTP/business failure.

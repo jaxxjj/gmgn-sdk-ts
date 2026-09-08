@@ -2,6 +2,17 @@
 
 ## 0.2.0 — unreleased
 
+### Architecture follow-up
+
+- Canonical `GmgnClient` and `GmgnClientOptions`; legacy names remain aliases.
+- Endpoint-local auth/effect policy; request core no longer hardcodes business paths.
+- Separate request preparation, signing, response parsing and retry orchestration.
+- Preparation failures are never treated as retryable network failures.
+- Safe error metadata includes operation, attempt and bounded reason codes.
+- Object-style trenches parameters and reserved-field/section validation.
+- Clean generated output before builds to exclude obsolete modules from packages.
+- Conservative unknown outcome for every failed write after submission.
+
 Independent SDK implementation, no byte-identity constraint.
 
 ### Breaking changes

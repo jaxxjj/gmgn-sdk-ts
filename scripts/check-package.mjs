@@ -55,10 +55,17 @@ writeFileSync(
   join(consumer, "consumer.mts"),
   `
 import { GmgnClient, type Config, type TokenSignalGroup } from "@jaxxjj/gmgn-sdk";
+import type { GmgnClientOptions, GetTrenchesParams, HotSearchParams } from "@jaxxjj/gmgn-sdk";
+const options: GmgnClientOptions = {apiKey: "mock"};
+const trenches: GetTrenchesParams = {chain: "sol", types: ["completed"], limit: 5};
+const hot: HotSearchParams = {chain: "sol", interval: "1h"};
+// @ts-expect-error Section names cannot overwrite protocol keys.
+const badSection: GetTrenchesParams = {chain: "sol", types: ["version"]};
+void options; void trenches; void hot; void badSection;
 const config: Config = {host: "https://openapi.gmgn.ai", apiKey: "mock"};
 const client = new GmgnClient(config);
 const groups: TokenSignalGroup[] = [{signal_type: [12]}];
-const run = (): Promise<unknown> => client.getTokenSignalV2("sol", groups);
+const run = (): Promise<unknown> => client.getTokenSignals("sol", groups);
 // @ts-expect-error API key must be explicitly supplied.
 const invalid: Config = {host: "https://openapi.gmgn.ai"};
 void run; void invalid;

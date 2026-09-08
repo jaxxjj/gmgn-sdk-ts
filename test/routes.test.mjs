@@ -19,6 +19,7 @@ const routes = [
   ["getTrenches", ["sol"], "POST", "/v1/trenches"],
   ["getTrendingSwaps", ["sol", "1h"], "GET", "/v1/market/rank"],
   ["getTokenSignalV2", ["sol", []], "POST", "/v1/market/token_signal"],
+  ["getTokenSignals", ["sol", []], "POST", "/v1/market/token_signal"],
   ["getHotSearches", [[]], "POST", "/v1/market/hot_searches"],
   ["searchMarket", ["token"], "GET", "/v1/market/search"],
   ["getUserInfo", [], "GET", "/v1/user/info"],
