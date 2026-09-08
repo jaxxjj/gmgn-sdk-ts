@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.1 — 2026-09-08
 
 - Added executable per-endpoint chain/parameter/failure matrices, independent
   Ed25519/RSA wire-signature checks and read/write safety gates.
