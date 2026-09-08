@@ -1,0 +1,34 @@
+{
+  "name": "@jaxxjj/gmgn-sdk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Unofficial Node.js TypeScript SDK extracted from the MIT-licensed GMGN client",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "LICENSE", "UPSTREAM.md", "README.md"],
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "test:smoke": "npm run build && node scripts/smoke.mjs",
+    "test:package": "npm pack && node scripts/check-package.mjs",
+    "prepack": "npm run build"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaxxjj/gmgn-sdk-ts.git"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.1",
+    "typescript": "7.0.2"
+  }
+}
