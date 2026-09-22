@@ -50,7 +50,7 @@
   "devDependencies": {
     "lossless-json": "4.3.1",
     "@types/node": "22.20.1",
-    "prettier": "3.9.6",
+    "prettier": "3.9.8",
     "typescript": "7.0.2"
   }
 }
