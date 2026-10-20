@@ -48,7 +48,7 @@
     "url": "git+https://github.com/jaxxjj/gmgn-sdk-ts.git"
   },
   "devDependencies": {
-    "lossless-json": "4.3.1",
+    "lossless-json": "4.3.2",
     "@types/node": "22.20.1",
     "prettier": "3.9.6",
     "typescript": "7.0.2"
